@@ -1,10 +1,12 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Menu, X, Phone } from "lucide-react";
 import { CONTACT, NAV, RERA } from "./data";
 
 export function Header() {
+  const reduceMotion = useReducedMotion();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = useLocation({ select: (location) => location.pathname });
@@ -30,7 +32,7 @@ export function Header() {
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <header
-        className={`fixed inset-x-2 top-3 z-50 mx-auto h-[72px] max-w-7xl rounded-[24px] border border-white/15 shadow-xl backdrop-blur-xl transition-colors sm:inset-x-5 sm:top-4 sm:h-20 sm:rounded-full ${scrolled || open ? "bg-ink/95" : "bg-ink/85"}`}
+        className={`fixed inset-x-2 top-3 z-50 mx-auto h-[72px] max-w-7xl rounded-[24px] border border-black/10 bg-white transition-shadow sm:inset-x-5 sm:top-4 sm:h-20 sm:rounded-full ${scrolled || open ? "shadow-xl" : "shadow-lg"} ${open ? "rounded-b-none sm:rounded-b-none" : ""}`}
       >
         <div className="mx-auto flex h-full max-w-7xl items-center gap-2 px-3 sm:gap-4 sm:px-6">
           <Link
@@ -39,20 +41,12 @@ export function Header() {
             className="order-1 flex min-w-0 shrink-0 items-center gap-2"
           >
             <img
-              src="/images/space-value-logo-dark.png"
+              src="/images/space-value-logo.png"
               alt="Space Value logo"
-              width={1120}
-              height={1400}
+              width={453}
+              height={564}
               className="h-9 w-auto shrink-0 object-contain sm:h-11"
             />
-            <span className="leading-tight">
-              <span className="block font-display text-base text-ivory sm:text-xl">
-                Space Value
-              </span>
-              <span className="block text-[0.45rem] tracking-[0.12em] text-gold-soft uppercase sm:text-[0.6rem]">
-                Channel Partner
-              </span>
-            </span>
           </Link>
           <Link
             to="/rera"
@@ -66,7 +60,7 @@ export function Header() {
               height={270}
               className="h-auto w-[72px] rounded-md bg-white p-1 sm:w-[92px]"
             />
-            <span className="text-[7px] tracking-wide text-gold-soft sm:text-[9px]">
+            <span className="text-[7px] tracking-wide text-slate-600 sm:text-[9px]">
               Agent: {RERA.number}
             </span>
           </Link>
@@ -78,8 +72,8 @@ export function Header() {
               <Link
                 key={item.to}
                 to={item.to}
-                className="rounded-full px-3 py-2 text-sm text-ivory/80 transition-colors hover:bg-white/5 hover:text-gold"
-                activeProps={{ className: "bg-white/10 text-gold" }}
+                className="rounded-full px-3 py-2 text-sm text-slate-700 transition-colors hover:bg-sky-50 hover:text-sky-700"
+                activeProps={{ className: "bg-sky-50 text-sky-700" }}
                 activeOptions={{ exact: item.to === "/" }}
               >
                 {item.label}
@@ -87,7 +81,7 @@ export function Header() {
             ))}
             <a
               href={`tel:+${CONTACT.phoneRaw}`}
-              className="inline-flex items-center gap-2 rounded-full border border-gold px-4 py-3 text-xs text-gold hover:bg-gold hover:text-ink"
+              className="inline-flex items-center gap-2 rounded-full border border-sky-700 bg-sky-700 px-4 py-3 text-xs text-white hover:bg-sky-800"
             >
               <Phone className="h-3.5 w-3.5" />
               Call now
@@ -97,61 +91,98 @@ export function Header() {
             <button
               type="button"
               aria-label="Open menu"
-              className="order-3 ml-auto grid h-10 w-10 shrink-0 place-items-center rounded-full border border-ivory/25 text-ivory lg:hidden"
+              className="order-3 ml-auto grid h-10 w-10 shrink-0 place-items-center rounded-full border border-slate-200 text-ink lg:hidden"
             >
               <Menu className="h-5 w-5" />
             </button>
           </Dialog.Trigger>
         </div>
       </header>
-      <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-[60] bg-ink/60 backdrop-blur-sm" />
-        <Dialog.Content
-          aria-describedby={undefined}
-          className="fixed inset-x-2 top-3 z-[70] max-h-[calc(100dvh-24px)] rounded-[24px] overflow-y-auto overscroll-contain border-b border-white/10 bg-ink px-5 pb-6 text-ivory shadow-2xl sm:px-8"
-        >
-          <div className="flex h-24 items-center justify-between">
-            <Dialog.Title className="font-display text-2xl">Explore Space Value</Dialog.Title>
-            <Dialog.Close asChild>
-              <button
-                type="button"
-                aria-label="Close menu"
-                className="grid h-11 w-11 place-items-center rounded-full border border-white/25"
+      <AnimatePresence>
+        {open && (
+          <Dialog.Portal forceMount>
+            <Dialog.Overlay forceMount asChild>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: reduceMotion ? 0 : 0.18 }}
+                className="fixed inset-x-0 bottom-0 top-[84px] z-[60] bg-ink/40 backdrop-blur-sm sm:top-24"
+              />
+            </Dialog.Overlay>
+            <Dialog.Content
+              forceMount
+              asChild
+              aria-describedby={undefined}
+              className="fixed inset-x-2 top-[84px] z-[70] max-h-[calc(100dvh-96px)] rounded-b-[24px] overflow-y-auto overscroll-contain border border-t-0 border-slate-200 bg-white px-5 pb-6 text-ink shadow-2xl sm:inset-x-5 sm:top-24 sm:max-h-[calc(100dvh-112px)] sm:rounded-b-[32px] sm:px-8"
+            >
+              <motion.div
+                initial={{
+                  opacity: reduceMotion ? 1 : 0,
+                  clipPath: reduceMotion ? "inset(0 0 0 0)" : "inset(0 0 100% 0)",
+                }}
+                animate={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }}
+                exit={{
+                  opacity: 0,
+                  clipPath: reduceMotion ? "inset(0 0 0 0)" : "inset(0 0 100% 0)",
+                }}
+                transition={{ duration: reduceMotion ? 0 : 0.35, ease: [0.22, 1, 0.36, 1] }}
+                style={{ transformOrigin: "top center" }}
               >
-                <X className="h-5 w-5" />
-              </button>
-            </Dialog.Close>
-          </div>
-          <nav aria-label="Mobile navigation">
-            {NAV.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                onClick={() => setOpen(false)}
-                className="block border-b border-white/10 py-3 font-display text-2xl text-ivory/90"
-                activeProps={{ className: "text-gold" }}
-                activeOptions={{ exact: item.to === "/" }}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <a
-            href={`tel:+${CONTACT.phoneRaw}`}
-            className="mt-5 flex items-center justify-center gap-2 bg-gold px-4 py-3 text-sm text-ink"
-          >
-            <Phone className="h-4 w-4" />
-            {CONTACT.phoneDisplay}
-          </a>
-          <a
-            href={`mailto:${CONTACT.email}`}
-            className="mt-3 block text-center text-sm text-ivory/70"
-          >
-            {CONTACT.email}
-          </a>
-          <p className="mt-4 text-center text-xs text-gold-soft">TG RERA Agent: {RERA.number}</p>
-        </Dialog.Content>
-      </Dialog.Portal>
+                <Dialog.Title className="sr-only">Main navigation</Dialog.Title>
+                <Dialog.Close asChild>
+                  <button
+                    type="button"
+                    aria-label="Close menu"
+                    className="absolute right-5 top-2 z-10 grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white sm:right-8"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </Dialog.Close>
+                <nav aria-label="Mobile navigation">
+                  {NAV.map((item, index) => (
+                    <motion.div
+                      key={item.to}
+                      initial={{ opacity: 0, x: reduceMotion ? 0 : -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        duration: reduceMotion ? 0 : 0.2,
+                        delay: reduceMotion ? 0 : 0.05 + index * 0.035,
+                      }}
+                    >
+                      <Link
+                        to={item.to}
+                        onClick={() => setOpen(false)}
+                        className="block border-b border-slate-200 py-3 pr-12 font-display text-2xl text-slate-700"
+                        activeProps={{ className: "text-sky-700" }}
+                        activeOptions={{ exact: item.to === "/" }}
+                      >
+                        {item.label}
+                      </Link>
+                    </motion.div>
+                  ))}
+                </nav>
+                <a
+                  href={`tel:+${CONTACT.phoneRaw}`}
+                  className="mt-5 flex items-center justify-center gap-2 rounded-full bg-sky-700 px-4 py-3 text-sm text-white"
+                >
+                  <Phone className="h-4 w-4" />
+                  {CONTACT.phoneDisplay}
+                </a>
+                <a
+                  href={`mailto:${CONTACT.email}`}
+                  className="mt-3 block text-center text-sm text-slate-600"
+                >
+                  {CONTACT.email}
+                </a>
+                <p className="mt-4 text-center text-xs text-slate-600">
+                  TG RERA Agent: {RERA.number}
+                </p>
+              </motion.div>
+            </Dialog.Content>
+          </Dialog.Portal>
+        )}
+      </AnimatePresence>
     </Dialog.Root>
   );
 }

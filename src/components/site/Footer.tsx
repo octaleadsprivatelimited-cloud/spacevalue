@@ -9,11 +9,11 @@ export function Footer() {
         <div>
           <Link to="/" className="inline-flex items-center gap-3" aria-label="Space Value home">
             <img
-              src="/images/space-value-logo-dark.png"
+              src="/images/space-value-logo.png"
               alt="Space Value logo"
-              width={1120}
-              height={1400}
-              className="h-20 w-auto object-contain"
+              width={453}
+              height={564}
+              className="h-20 w-auto rounded-lg bg-white p-2 object-contain"
             />
             <span className="font-display text-2xl text-ivory">Space Value</span>
           </Link>
