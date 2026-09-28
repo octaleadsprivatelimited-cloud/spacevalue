@@ -1,3 +1,11 @@
+export const RERA = {
+  number: "A02500000572",
+  registeredName: "SV CONSULTANCE",
+  validFrom: "29 August 2026",
+  validUntil: "28 August 2031",
+  portal: "https://rera.telangana.gov.in/",
+};
+
 export const CONTACT = {
   email: "info@spacevalue.co.in",
   phoneDisplay: "+91 86862 56748",
@@ -11,7 +19,7 @@ export const NAV = [
   { to: "/about", label: "About" },
   { to: "/properties", label: "Properties" },
   { to: "/gallery", label: "Gallery" },
-  { to: "/rera", label: "RERA Approved" },
+  { to: "/rera", label: "RERA" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -75,6 +83,10 @@ export const PROPERTIES: Property[] = [
     status: "New launch",
     rera: "P02400008441",
     image: "township",
-    highlights: ["18-acre integrated township", "40,000 sq.ft clubhouse", "Cricket & tennis courts"],
+    highlights: [
+      "18-acre integrated township",
+      "40,000 sq.ft clubhouse",
+      "Cricket & tennis courts",
+    ],
   },
 ];

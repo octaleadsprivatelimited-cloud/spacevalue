@@ -58,7 +58,7 @@ function Properties() {
                     {p.status}
                   </span>
                   <span className="text-[0.65rem] tracking-[0.15em] text-muted-foreground uppercase">
-                    RERA {p.rera}
+                    Project RERA {p.rera}
                   </span>
                 </div>
                 <h2 className="mt-4 font-display text-3xl text-ink sm:text-4xl">{p.name}</h2>

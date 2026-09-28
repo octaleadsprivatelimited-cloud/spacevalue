@@ -1,22 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ShieldCheck } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
-import { PROPERTIES } from "@/components/site/data";
+import { PROPERTIES, RERA } from "@/components/site/data";
 import interiorLiving from "@/assets/interior-living.jpg";
 
 export const Route = createFileRoute("/rera")({
   head: () => ({
     meta: [
-      { title: "RERA Approved Projects — Registration Numbers | Space Value" },
+      { title: "TG RERA Agent Registration & Certificate | Space Value" },
       {
         name: "description",
         content:
-          "TS RERA registration numbers for every project Space Value represents, plus how to verify a project on the official Telangana RERA portal.",
+          "TG RERA registration numbers for every project Space Value represents, plus how to verify a project on the official Telangana RERA portal.",
       },
       { property: "og:title", content: "RERA Approved Projects — Space Value" },
       {
         property: "og:description",
-        content: "Verify TS RERA registration numbers for all our Hyderabad projects.",
+        content: "Verify TG RERA registration numbers for all our Hyderabad projects.",
       },
     ],
   }),
@@ -28,10 +28,76 @@ function Rera() {
     <>
       <PageHero
         eyebrow="Compliance"
-        title="RERA approved. Every single one."
-        subtitle="We only market projects registered with the Telangana Real Estate Regulatory Authority."
+        title="Registered. Transparent. Accountable."
+        subtitle={`TG RERA agent registration ${RERA.number}. View our registration details and original certificate below.`}
         image={interiorLiving}
       />
+
+      <section className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+        <div className="min-w-0">
+          <p className="eyebrow">Agent registration</p>
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl">Our TG RERA certificate</h2>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+            Registration details as shown on the Telangana Real Estate Regulatory Authority
+            certificate.
+          </p>
+          <dl className="mt-8 divide-y divide-border border-y border-border text-sm">
+            {[
+              ["Registration number", RERA.number],
+              ["Registered name", RERA.registeredName],
+              ["Valid from", RERA.validFrom],
+              ["Valid until", RERA.validUntil],
+            ].map(([label, value]) => (
+              <div key={label} className="py-4">
+                <dt className="text-muted-foreground">{label}</dt>
+                <dd className="mt-1 font-medium text-ink">{value}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
+            This is a real estate agent registration. Each development has its own separate project
+            registration.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <a
+              href="/rera-certificate.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="border border-ink bg-ink px-5 py-3 text-sm text-ivory"
+            >
+              Open original PDF
+            </a>
+            <a
+              href={RERA.portal}
+              target="_blank"
+              rel="noreferrer"
+              className="border border-ink px-5 py-3 text-sm"
+            >
+              Visit TG RERA
+            </a>
+          </div>
+        </div>
+        <figure className="min-w-0">
+          <a
+            href="/images/rera-certificate.png"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="View full size RERA registration certificate"
+            className="block border border-border bg-white p-2 shadow-lg sm:p-4"
+          >
+            <img
+              src="/images/rera-certificate.png"
+              alt={`TG RERA registration certificate for ${RERA.registeredName}, number ${RERA.number}, valid ${RERA.validFrom} to ${RERA.validUntil}`}
+              width={1414}
+              height={2000}
+              className="h-auto w-full"
+            />
+          </a>
+          <figcaption className="mt-4 text-center text-xs text-muted-foreground">
+            Select the certificate to view the full-size image.
+          </figcaption>
+        </figure>
+      </section>
 
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
@@ -57,7 +123,7 @@ function Rera() {
           </div>
 
           <div>
-            <p className="eyebrow">Registration numbers</p>
+            <p className="eyebrow">Project registration numbers</p>
             <div className="mt-6 divide-y divide-border border-y border-border">
               {PROPERTIES.map((p) => (
                 <div key={p.slug} className="grid gap-2 py-5 sm:grid-cols-[minmax(0,1fr)_auto]">
@@ -66,7 +132,7 @@ function Rera() {
                     <p className="text-sm text-muted-foreground">{p.location}</p>
                   </div>
                   <p className="text-sm tracking-[0.1em] text-gold sm:text-right">
-                    TS RERA {p.rera}
+                    Project RERA {p.rera}
                   </p>
                 </div>
               ))}

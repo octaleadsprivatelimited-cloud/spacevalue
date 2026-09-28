@@ -37,7 +37,7 @@ function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex min-h-[92svh] items-end overflow-hidden bg-ink">
+      <section className="relative flex min-h-[92svh] pt-36 items-end overflow-hidden bg-ink">
         <img
           src={heroTower}
           alt="Luxury residential tower at dusk"
@@ -210,7 +210,11 @@ function Home() {
           {[
             ["01", "Understand", "Budget, locality, possession timeline and the way you live."],
             ["02", "Shortlist", "A tight list of 3–4 RERA approved projects that actually fit."],
-            ["03", "Site visits", "Chauffeured visits, floor plan walk-through, honest comparison."],
+            [
+              "03",
+              "Site visits",
+              "Chauffeured visits, floor plan walk-through, honest comparison.",
+            ],
             ["04", "Close", "Price negotiation, home loan, agreement and registration."],
           ].map(([n, t, d]) => (
             <div key={n} className="border-t border-border pt-6">

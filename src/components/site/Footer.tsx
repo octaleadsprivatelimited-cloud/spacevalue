@@ -1,13 +1,25 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { CONTACT, NAV } from "./data";
+import { CONTACT, NAV, RERA } from "./data";
 
 export function Footer() {
   return (
     <footer className="bg-ink text-ivory/70">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 md:grid-cols-3">
         <div>
-          <h3 className="font-display text-2xl text-ivory">Space Value</h3>
+          <Link to="/" className="inline-flex items-center gap-3" aria-label="Space Value home">
+            <img
+              src="/images/space-value-logo-dark.png"
+              alt="Space Value logo"
+              width={1120}
+              height={1400}
+              className="h-20 w-auto object-contain"
+            />
+            <span className="font-display text-2xl text-ivory">Space Value</span>
+          </Link>
+          <Link to="/rera" className="mt-3 block text-xs text-gold">
+            TG RERA Agent: {RERA.number}
+          </Link>
           <p className="mt-1 text-[0.6rem] tracking-[0.25em] text-gold uppercase">
             Real Estate Channel Partner
           </p>
