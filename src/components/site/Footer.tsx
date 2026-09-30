@@ -67,7 +67,20 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-5 py-6 text-xs sm:px-8">
-          <p>© {new Date().getFullYear()} Space Value. All rights reserved.</p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p>© {new Date().getFullYear()} Space Value. All rights reserved.</p>
+            <p>
+              Developed by{" "}
+              <a
+                href="https://www.octaleads.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold transition-colors hover:text-ivory"
+              >
+                Octaleads
+              </a>
+            </p>
+          </div>
           <p className="mt-2 leading-relaxed text-ivory/45">
             Disclaimer: Space Value is a marketing channel partner and not the developer. All
             project information, pricing and approvals shown are indicative and subject to change by
