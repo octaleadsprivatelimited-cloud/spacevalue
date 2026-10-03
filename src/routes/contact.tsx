@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/site";
 import { createFileRoute } from "@tanstack/react-router";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
@@ -5,26 +6,13 @@ import { CONTACT, PROPERTIES } from "@/components/site/data";
 import villa from "@/assets/villa.jpg";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact Space Value — Hyderabad Real Estate Channel Partner" },
-      {
-        name: "description",
-        content:
-          "Call +91 86862 56748 or email info@spacevalue.co.in to book a site visit with Space Value in Hyderabad.",
-      },
-      { property: "og:title", content: "Contact Space Value" },
-      {
-        property: "og:description",
-        content: "Book a site visit or request a curated shortlist of RERA approved homes.",
-      },
-    ],
-  }),
+  head: () => pageMetadata("/contact"),
   component: Contact,
 });
 
 function Contact() {
-  const mailto = (subject: string) => `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}`;
+  const mailto = (subject: string) =>
+    `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}`;
 
   return (
     <>
@@ -48,10 +36,7 @@ function Contact() {
                   <p className="text-[0.65rem] tracking-[0.18em] text-muted-foreground uppercase">
                     Phone & WhatsApp
                   </p>
-                  <a
-                    href={`tel:+${CONTACT.phoneRaw}`}
-                    className="text-lg text-ink hover:text-gold"
-                  >
+                  <a href={`tel:+${CONTACT.phoneRaw}`} className="text-lg text-ink hover:text-gold">
                     {CONTACT.phoneDisplay}
                   </a>
                 </div>
@@ -120,7 +105,13 @@ function Contact() {
               encType="text/plain"
             >
               <Field label="Full name" name="name" placeholder="Your name" required />
-              <Field label="Phone" name="phone" type="tel" placeholder={CONTACT.phoneDisplay} required />
+              <Field
+                label="Phone"
+                name="phone"
+                type="tel"
+                placeholder={CONTACT.phoneDisplay}
+                required
+              />
               <Field label="Email" name="email" type="email" placeholder="you@email.com" />
               <div>
                 <label

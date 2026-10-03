@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/site";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, BadgeCheck, Handshake, KeyRound, ShieldCheck } from "lucide-react";
 import heroTower from "@/assets/hero-tower.jpg";
@@ -7,22 +8,7 @@ import township from "@/assets/township.jpg";
 import { CONTACT, PROPERTIES } from "@/components/site/data";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Space Value — Luxury Real Estate Channel Partner in Hyderabad" },
-      {
-        name: "description",
-        content:
-          "RERA approved luxury apartments, villas and gated townships in Hyderabad. Site visits, best developer pricing and zero brokerage for buyers.",
-      },
-      { property: "og:title", content: "Space Value — Luxury Real Estate Channel Partner" },
-      {
-        property: "og:description",
-        content:
-          "Hand-picked RERA approved luxury homes across Hyderabad, with end-to-end buying support.",
-      },
-    ],
-  }),
+  head: () => pageMetadata("/"),
   component: Home,
 });
 
@@ -41,6 +27,7 @@ function Home() {
         <img
           src={heroTower}
           alt="Luxury residential tower at dusk"
+          fetchPriority="high"
           width={1920}
           height={1200}
           className="absolute inset-0 h-full w-full object-cover"

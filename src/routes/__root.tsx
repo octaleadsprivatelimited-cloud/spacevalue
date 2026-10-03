@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "Space Value" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:card", content: "summary" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -122,9 +122,15 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-white focus:p-3 focus:text-ink"
+      >
+        Skip to content
+      </a>
       <Header />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <main className="page-content">
+      <main id="main-content" tabIndex={-1} className="page-content">
         <Outlet />
       </main>
       <Footer />

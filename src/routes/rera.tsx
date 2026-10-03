@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/site";
 import { createFileRoute } from "@tanstack/react-router";
 import { ShieldCheck } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
@@ -5,21 +6,7 @@ import { PROPERTIES, RERA } from "@/components/site/data";
 import interiorLiving from "@/assets/interior-living.jpg";
 
 export const Route = createFileRoute("/rera")({
-  head: () => ({
-    meta: [
-      { title: "TG RERA Agent Registration & Certificate | Space Value" },
-      {
-        name: "description",
-        content:
-          "TG RERA registration numbers for every project Space Value represents, plus how to verify a project on the official Telangana RERA portal.",
-      },
-      { property: "og:title", content: "RERA Approved Projects — Space Value" },
-      {
-        property: "og:description",
-        content: "Verify TG RERA registration numbers for all our Hyderabad projects.",
-      },
-    ],
-  }),
+  head: () => pageMetadata("/rera"),
   component: Rera,
 });
 

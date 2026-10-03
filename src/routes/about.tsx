@@ -1,24 +1,11 @@
+import { pageMetadata } from "@/lib/site";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import heroTower from "@/assets/hero-tower.jpg";
 import interiorLiving from "@/assets/interior-living.jpg";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Space Value — Hyderabad Real Estate Channel Partner" },
-      {
-        name: "description",
-        content:
-          "Space Value is an authorised channel partner working with 40+ Hyderabad developers, offering RERA approved homes with zero brokerage for buyers.",
-      },
-      { property: "og:title", content: "About Space Value" },
-      {
-        property: "og:description",
-        content: "12 years, 40+ developer tie-ups and 1,800+ families settled in Hyderabad.",
-      },
-    ],
-  }),
+  head: () => pageMetadata("/about"),
   component: About,
 });
 
@@ -87,11 +74,20 @@ function About() {
           <h2 className="mt-4 font-display text-3xl text-ink sm:text-4xl">Services</h2>
           <div className="mt-12 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
             {[
-              ["Project advisory", "Corridor-by-corridor comparison of price, builder and timeline."],
+              [
+                "Project advisory",
+                "Corridor-by-corridor comparison of price, builder and timeline.",
+              ],
               ["Site visits", "Chauffeured visits across shortlisted projects in a single day."],
               ["Price negotiation", "Launch pricing, inventory holds and developer offers."],
-              ["Home loan assistance", "Rate comparison across banks and NBFCs, sanction follow-up."],
-              ["Legal & documentation", "Title scrutiny, agreement review, registration coordination."],
+              [
+                "Home loan assistance",
+                "Rate comparison across banks and NBFCs, sanction follow-up.",
+              ],
+              [
+                "Legal & documentation",
+                "Title scrutiny, agreement review, registration coordination.",
+              ],
               ["NRI desk", "Remote video tours, POA guidance and repatriation basics."],
             ].map(([t, d]) => (
               <div key={t} className="bg-background p-8">

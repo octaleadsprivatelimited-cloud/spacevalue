@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/site";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { PROPERTIES } from "@/components/site/data";
@@ -7,21 +8,7 @@ import villa from "@/assets/villa.jpg";
 import township from "@/assets/township.jpg";
 
 export const Route = createFileRoute("/properties")({
-  head: () => ({
-    meta: [
-      { title: "Properties — RERA Approved Luxury Homes in Hyderabad | Space Value" },
-      {
-        name: "description",
-        content:
-          "Browse RERA approved luxury apartments, villas and township homes in Kokapet, Tellapur, Financial District and Shankarpally Road.",
-      },
-      { property: "og:title", content: "Luxury Properties in Hyderabad — Space Value" },
-      {
-        property: "og:description",
-        content: "Sky residences, private villas and integrated townships, all RERA registered.",
-      },
-    ],
-  }),
+  head: () => pageMetadata("/properties"),
   component: Properties,
 });
 

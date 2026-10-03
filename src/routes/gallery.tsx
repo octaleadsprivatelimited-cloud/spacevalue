@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/site";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import heroTower from "@/assets/hero-tower.jpg";
@@ -6,21 +7,7 @@ import villa from "@/assets/villa.jpg";
 import township from "@/assets/township.jpg";
 
 export const Route = createFileRoute("/gallery")({
-  head: () => ({
-    meta: [
-      { title: "Gallery — Luxury Homes & Communities | Space Value" },
-      {
-        name: "description",
-        content:
-          "A visual walk through the towers, interiors, villas and gated communities Space Value represents across Hyderabad.",
-      },
-      { property: "og:title", content: "Gallery — Space Value" },
-      {
-        property: "og:description",
-        content: "Towers, interiors, villas and townships from our Hyderabad portfolio.",
-      },
-    ],
-  }),
+  head: () => pageMetadata("/gallery"),
   component: Gallery,
 });
 
@@ -49,7 +36,7 @@ function Gallery() {
             <figure key={i} className="group relative overflow-hidden bg-ink">
               <img
                 src={item.src}
-                alt={item.title}
+                alt={`${item.title} — ${item.caption}`}
                 width={1408}
                 height={1008}
                 loading="lazy"

@@ -15,7 +15,8 @@ export function PageHero({
         src={image}
         alt=""
         className="absolute inset-0 h-full w-full object-cover opacity-45"
-        loading="lazy"
+        loading="eager"
+        fetchPriority="high"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/30" />
       <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8">
