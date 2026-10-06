@@ -1,0 +1,38 @@
+{
+  "state": "Prepared locally; not configured or launched in Google Ads",
+  "accountEmail": "spcvalue@gmail.com",
+  "accountId": "244-029-3549",
+  "campaign": "Space Value | Hyderabad Projects | Search",
+  "type": "Search",
+  "status": "Paused until onboarding and tracking are completed",
+  "averageDailyBudgetINR": 300,
+  "monthlyBudgetLimitINR": 9120,
+  "potentialDailySpendINR": 600,
+  "location": "Hyderabad, Telangana, India",
+  "locationOption": "Presence: people in or regularly in the targeted location",
+  "language": "English",
+  "networks": [
+    "Google Search"
+  ],
+  "searchPartners": false,
+  "displayNetwork": false,
+  "bidding": "Maximize clicks",
+  "startingMaxCpcINR": 30,
+  "autoTagging": true,
+  "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=space_value_projects&utm_term={keyword}&utm_content={creative}",
+  "conversionStatus": "Not installed; requires actual Google Ads conversion ID and label after onboarding",
+  "primaryEnquiry": "WhatsApp; a click is enquiry intent, not a confirmed lead",
+  "adGroups": [
+    "yula-neo",
+    "ghr-cascade",
+    "sattva-lake-ridge",
+    "asbl-broadway",
+    "asbl-loft",
+    "myscape-songs-of-the-sun",
+    "myscape-palma",
+    "raghava-cinq",
+    "gamya",
+    "tridasa"
+  ],
+  "remainingProjects": "Landing pages prepared; developer-only entries and Sattva Lago require exact project confirmation before project-specific ads."
+}

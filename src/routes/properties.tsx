@@ -1,5 +1,5 @@
 import { pageMetadata } from "@/lib/site";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { PROPERTIES, PROPERTY_GROUPS, propertyWhatsAppUrl } from "@/components/site/data";
 import { PropertyImage } from "@/components/site/PropertyImage";
@@ -51,27 +51,38 @@ function Properties() {
               </h2>
               <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {PROPERTIES.filter((p) => p.group === group).map((p) => (
-                  <a
-                    id={p.slug}
-                    href={propertyWhatsAppUrl(p)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Enquire about ${p.name} in ${p.location} on WhatsApp`}
+                  <div
                     key={p.slug}
-                    className="group flex scroll-mt-28 flex-col overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+                    className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-lg"
                   >
-                    <PropertyImage image={p.image} />
-                    <div className="flex flex-1 flex-col p-6 sm:p-7">
-                      <p className="text-xs text-muted-foreground">{p.location}</p>
-                      <h3 className="mt-3 font-display text-2xl text-ink">{p.name}</h3>
-                      <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                        Request project details, availability and a site visit with Space Value.
-                      </p>
-                      <span className="mt-6 inline-flex self-start border-b border-gold pb-1 text-sm text-ink">
-                        Enquire on WhatsApp ↗
-                      </span>
-                    </div>
-                  </a>
+                    <a
+                      id={p.slug}
+                      href={propertyWhatsAppUrl(p)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Enquire about ${p.name} in ${p.location} on WhatsApp`}
+                      className="flex flex-1 scroll-mt-28 flex-col focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+                    >
+                      <PropertyImage image={p.image} />
+                      <div className="flex flex-1 flex-col p-6 sm:p-7">
+                        <p className="text-xs text-muted-foreground">{p.location}</p>
+                        <h3 className="mt-3 font-display text-2xl text-ink">{p.name}</h3>
+                        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                          Request project details, availability and a site visit with Space Value.
+                        </p>
+                        <span className="mt-6 inline-flex self-start border-b border-gold pb-1 text-sm text-ink">
+                          Enquire on WhatsApp ↗
+                        </span>
+                      </div>
+                    </a>
+                    <Link
+                      to="/projects/$slug"
+                      params={{ slug: p.slug }}
+                      className="border-t border-border px-6 py-4 text-sm text-muted-foreground hover:text-ink sm:px-7"
+                    >
+                      View property enquiry page →
+                    </Link>
+                  </div>
                 ))}
               </div>
             </section>

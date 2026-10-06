@@ -1,4 +1,5 @@
-import { CONTACT, PROPERTIES } from "@/components/site/data";
+import { CONTACT, PROPERTIES, type Property } from "@/components/site/data";
+import { PROJECT_MEDIA } from "@/components/site/project-media";
 
 export const SITE_URL = "https://www.spacevalue.co.in";
 
@@ -76,7 +77,7 @@ export function pageMetadata(path: string) {
                       "@type": "ListItem",
                       position: index + 1,
                       name: `${property.name} — ${property.location}`,
-                      url: `${SITE_URL}/properties#${property.slug}`,
+                      url: `${SITE_URL}/projects/${property.slug}`,
                     })),
                   },
                 ]
@@ -109,6 +110,51 @@ export function pageMetadata(path: string) {
               inLanguage: "en-IN",
             },
           ],
+        }).replace(/</g, "\\u003c"),
+      },
+    ],
+  };
+}
+
+export function projectMetadata(property: Property) {
+  const title = `${property.name} | Brochure & Site Visits | Space Value`;
+  const description = `Enquire about ${property.name} in ${property.location}. Request the latest brochure, pricing, available options and a site visit from Space Value.`;
+  const url = `${SITE_URL}/projects/${property.slug}`;
+  const media = PROJECT_MEDIA[property.image];
+  return {
+    links: [{ rel: "canonical", href: url }],
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:url", content: url },
+      { property: "og:image", content: `${SITE_URL}${media.src}` },
+      { property: "og:image:alt", content: media.alt },
+      { property: "og:image:width", content: String(media.width) },
+      { property: "og:image:height", content: String(media.height) },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: `${SITE_URL}${media.src}` },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          url,
+          name: title,
+          description,
+          image: `${SITE_URL}${media.src}`,
+          inLanguage: "en-IN",
+          publisher: {
+            "@type": "Organization",
+            name: "Space Value",
+            url: `${SITE_URL}/`,
+            telephone: `+${CONTACT.phoneRaw}`,
+          },
         }).replace(/</g, "\\u003c"),
       },
     ],

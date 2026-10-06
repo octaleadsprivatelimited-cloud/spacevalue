@@ -1,7 +1,13 @@
 import type { Property } from "./data";
 import { PROJECT_MEDIA, type ProjectMedia } from "./project-media";
 
-export function PropertyImage({ image }: { image: Property["image"] }) {
+export function PropertyImage({
+  image,
+  priority = false,
+}: {
+  image: Property["image"];
+  priority?: boolean;
+}) {
   const photo: ProjectMedia = PROJECT_MEDIA[image];
   return (
     <figure>
@@ -11,7 +17,8 @@ export function PropertyImage({ image }: { image: Property["image"] }) {
           alt={photo.alt}
           width={photo.width}
           height={photo.height}
-          loading="lazy"
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
           className={`aspect-[16/10] w-full ${photo.contain ? "object-contain" : "object-cover"} transition-transform duration-700 group-hover:scale-105 motion-reduce:transition-none`}
         />
         <div
