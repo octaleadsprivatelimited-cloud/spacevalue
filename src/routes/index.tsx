@@ -3,21 +3,41 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, BadgeCheck, Handshake, KeyRound, ShieldCheck } from "lucide-react";
 import heroTower from "@/assets/hero-tower.jpg";
 import interiorLiving from "@/assets/interior-living.jpg";
-import villa from "@/assets/villa.jpg";
 import township from "@/assets/township.jpg";
-import { CONTACT, PROPERTIES, propertyWhatsAppUrl } from "@/components/site/data";
+import { CONTACT, PROPERTIES, PROPERTY_GROUPS } from "@/components/site/data";
+import { PROPERTY_IMAGES } from "@/components/site/property-images";
 
 export const Route = createFileRoute("/")({
   head: () => pageMetadata("/"),
   component: Home,
 });
 
-const images = {
-  tower: heroTower,
-  interior: interiorLiving,
-  villa,
-  township,
-};
+const locations = [
+  {
+    name: "Neopolis",
+    group: "Neopolis",
+    image: "tower",
+    description: "Explore high-rise project enquiries in Neopolis.",
+  },
+  {
+    name: "Financial District",
+    group: "Financial District",
+    image: "interior",
+    description: "Discover projects in Hyderabad's Financial District.",
+  },
+  {
+    name: "Tellapur",
+    group: "Tellapur",
+    image: "township",
+    description: "Find your next home among our Tellapur project enquiries.",
+  },
+  {
+    name: "Osman Nagar",
+    group: "Osman Nagar villas",
+    image: "villa",
+    description: "Explore villa enquiries in Osman Nagar.",
+  },
+] as const;
 
 function Home() {
   return (
@@ -137,15 +157,13 @@ function Home() {
         </div>
       </section>
 
-      {/* Featured properties */}
+      {/* Browse by location */}
       <section className="bg-secondary/60 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
             <div className="min-w-0">
-              <p className="eyebrow">Featured</p>
-              <h2 className="mt-4 font-display text-3xl text-ink sm:text-5xl">
-                Signature residences
-              </h2>
+              <p className="eyebrow">Explore Hyderabad</p>
+              <h2 className="mt-4 font-display text-3xl text-ink sm:text-5xl">Locations</h2>
             </div>
             <Link
               to="/properties"
@@ -156,41 +174,39 @@ function Home() {
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2">
-            {[PROPERTIES[0]!, PROPERTIES[8]!, PROPERTIES[13]!, PROPERTIES[17]!].map((p) => (
-              <a
-                key={p.slug}
-                href={propertyWhatsAppUrl(p)}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Enquire about ${p.name} in ${p.location} on WhatsApp`}
-                className="group block bg-card"
+            {locations.map((location) => (
+              <Link
+                key={location.group}
+                to="/properties"
+                hash={`location-${PROPERTY_GROUPS.indexOf(location.group)}`}
+                aria-label={`Explore projects in ${location.name}`}
+                className="group block overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
               >
-                <div className="overflow-hidden">
+                <div className="relative overflow-hidden">
                   <img
-                    src={images[p.image]}
-                    alt="Illustrative residential architecture"
+                    src={PROPERTY_IMAGES[location.image].src}
+                    alt={PROPERTY_IMAGES[location.image].alt}
                     width={1408}
                     height={1008}
                     loading="lazy"
-                    className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 motion-reduce:transition-none group-hover:scale-105"
                   />
-                </div>
-                <div className="p-6 sm:p-8">
-                  <div className="flex flex-wrap items-start gap-3">
-                    <h3 className="min-w-0 font-display text-2xl text-ink">{p.name}</h3>
-                    <span className="shrink-0 border border-gold/50 px-3 py-1 text-[0.6rem] tracking-[0.15em] text-gold uppercase">
-                      {p.group}
-                    </span>
-                  </div>
-                  <p className="mt-1 text-sm text-muted-foreground">{p.location}</p>
-                  <p className="mt-4 text-xs text-muted-foreground">
-                    Illustrative image. Contact us for project brochures and current availability.
-                  </p>
-                  <span className="mt-5 inline-flex text-sm text-ink underline underline-offset-4">
-                    Enquire on WhatsApp ↗
+                  <span className="absolute bottom-3 right-3 rounded-full bg-ink/75 px-3 py-1 text-[0.65rem] text-white">
+                    Illustrative image
                   </span>
                 </div>
-              </a>
+                <div className="p-6 sm:p-8">
+                  <p className="text-xs tracking-[0.15em] text-muted-foreground uppercase">
+                    {PROPERTIES.filter((p) => p.group === location.group).length} project enquiries
+                  </p>
+                  <h3 className="mt-2 font-display text-3xl text-ink">{location.name}</h3>
+                  <p className="mt-3 text-sm text-muted-foreground">{location.description}</p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm text-ink">
+                    Explore projects{" "}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transition-none" />
+                  </span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
