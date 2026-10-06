@@ -173,3 +173,8 @@ export const PROPERTIES: Property[] = [
     image: "villa",
   },
 ];
+
+export function propertyWhatsAppUrl(property: Property) {
+  const message = `Hi Space Value, I am interested in ${property.name} (${property.location}). Please share the brochure, current availability, pricing, project RERA registration and site visit details.`;
+  return `https://wa.me/${CONTACT.phoneRaw}?text=${encodeURIComponent(message)}`;
+}

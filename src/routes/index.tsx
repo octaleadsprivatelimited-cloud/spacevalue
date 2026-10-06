@@ -5,7 +5,7 @@ import heroTower from "@/assets/hero-tower.jpg";
 import interiorLiving from "@/assets/interior-living.jpg";
 import villa from "@/assets/villa.jpg";
 import township from "@/assets/township.jpg";
-import { CONTACT, PROPERTIES } from "@/components/site/data";
+import { CONTACT, PROPERTIES, propertyWhatsAppUrl } from "@/components/site/data";
 
 export const Route = createFileRoute("/")({
   head: () => pageMetadata("/"),
@@ -157,7 +157,14 @@ function Home() {
 
           <div className="mt-12 grid gap-8 md:grid-cols-2">
             {[PROPERTIES[0]!, PROPERTIES[8]!, PROPERTIES[13]!, PROPERTIES[17]!].map((p) => (
-              <article key={p.slug} className="group bg-card">
+              <a
+                key={p.slug}
+                href={propertyWhatsAppUrl(p)}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Enquire about ${p.name} in ${p.location} on WhatsApp`}
+                className="group block bg-card"
+              >
                 <div className="overflow-hidden">
                   <img
                     src={images[p.image]}
@@ -179,15 +186,11 @@ function Home() {
                   <p className="mt-4 text-xs text-muted-foreground">
                     Illustrative image. Contact us for project brochures and current availability.
                   </p>
-                  <Link
-                    to="/properties"
-                    hash={p.slug}
-                    className="mt-5 inline-flex text-sm text-ink underline underline-offset-4"
-                  >
-                    View project enquiry
-                  </Link>
+                  <span className="mt-5 inline-flex text-sm text-ink underline underline-offset-4">
+                    Enquire on WhatsApp ↗
+                  </span>
                 </div>
-              </article>
+              </a>
             ))}
           </div>
         </div>

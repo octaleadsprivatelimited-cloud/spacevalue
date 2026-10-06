@@ -1,7 +1,7 @@
 import { pageMetadata } from "@/lib/site";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import { CONTACT, PROPERTIES, PROPERTY_GROUPS } from "@/components/site/data";
+import { PROPERTIES, PROPERTY_GROUPS, propertyWhatsAppUrl } from "@/components/site/data";
 import township from "@/assets/township.jpg";
 
 export const Route = createFileRoute("/properties")({
@@ -50,26 +50,24 @@ function Properties() {
               </h2>
               <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {PROPERTIES.filter((p) => p.group === group).map((p) => (
-                  <article
+                  <a
                     id={p.slug}
+                    href={propertyWhatsAppUrl(p)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Enquire about ${p.name} in ${p.location} on WhatsApp`}
                     key={p.slug}
-                    className="flex scroll-mt-28 flex-col border border-border bg-card p-6 sm:p-7"
+                    className="flex scroll-mt-28 flex-col border border-border bg-card p-6 transition-colors hover:border-gold hover:bg-secondary/40 sm:p-7"
                   >
                     <p className="text-xs text-muted-foreground">{p.location}</p>
                     <h3 className="mt-3 font-display text-2xl text-ink">{p.name}</h3>
                     <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                       Request project details, availability and a site visit with Space Value.
                     </p>
-                    <a
-                      href={`https://wa.me/${CONTACT.phoneRaw}?text=${encodeURIComponent(`Hi Space Value, I would like details about ${p.name} (${p.location}), including availability, pricing and project RERA registration.`)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-6 inline-flex self-start border-b border-gold pb-1 text-sm text-ink"
-                      aria-label={`Enquire about ${p.name} in ${p.location}`}
-                    >
-                      Enquire about this project ↗
-                    </a>
-                  </article>
+                    <span className="mt-6 inline-flex self-start border-b border-gold pb-1 text-sm text-ink">
+                      Enquire on WhatsApp ↗
+                    </span>
+                  </a>
                 ))}
               </div>
             </section>
