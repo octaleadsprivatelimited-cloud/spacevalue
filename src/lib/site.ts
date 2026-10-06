@@ -4,6 +4,11 @@ import { PROJECT_MEDIA } from "@/components/site/project-media";
 export const SITE_URL = "https://www.spacevalue.co.in";
 
 const PAGES: Record<string, { title: string; description: string }> = {
+  "/privacy": {
+    title: "Privacy & Cookie Choices | Space Value",
+    description:
+      "How Space Value handles property enquiries, optional analytics and cookie choices. Contact us with privacy questions or change your tracking preferences.",
+  },
   "/": {
     title: "Space Value | Real Estate Channel Partner in Hyderabad",
     description:
@@ -83,13 +88,22 @@ export function pageMetadata(path: string) {
                 ]
               : []),
             {
-              "@type": "Organization",
+              "@type": "RealEstateAgent",
               "@id": `${SITE_URL}/#organization`,
               name: "Space Value",
               url: `${SITE_URL}/`,
               logo: `${SITE_URL}/images/space-value-logo.png`,
               telephone: `+${CONTACT.phoneRaw}`,
               email: CONTACT.email,
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Hyderabad",
+                addressRegion: "Telangana",
+                postalCode: "500032",
+                streetAddress: "Gachibowli",
+                addressCountry: "IN",
+              },
+              areaServed: { "@type": "City", name: "Hyderabad" },
             },
             {
               "@type": "WebSite",
@@ -139,6 +153,23 @@ export function projectMetadata(property: Property) {
       { name: "twitter:image", content: `${SITE_URL}${media.src}` },
     ],
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Properties",
+              item: `${SITE_URL}/properties`,
+            },
+            { "@type": "ListItem", position: 3, name: property.name, item: url },
+          ],
+        }),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify({

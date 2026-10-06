@@ -1,12 +1,19 @@
-import { CONTACT } from "./data";
+import { useRouterState } from "@tanstack/react-router";
+import { CONTACT, PROPERTIES, propertyWhatsAppUrl } from "./data";
 
 export function WhatsAppButton() {
-  const href = `https://wa.me/${CONTACT.phoneRaw}?text=${encodeURIComponent(
-    "Hi Space Value, I'd like details about your luxury projects.",
-  )}`;
+  const path = useRouterState({ select: (state) => state.location.pathname });
+  const property = PROPERTIES.find((p) => path === `/projects/${p.slug}`);
+  const href = property
+    ? propertyWhatsAppUrl(property)
+    : `https://wa.me/${CONTACT.phoneRaw}?text=${encodeURIComponent(
+        "Hi Space Value, I'd like details about your luxury projects.",
+      )}`;
 
   return (
     <a
+      data-project={property?.slug}
+      data-placement="floating_button"
       href={href}
       target="_blank"
       rel="noopener noreferrer"

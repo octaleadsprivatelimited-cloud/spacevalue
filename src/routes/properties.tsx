@@ -52,6 +52,7 @@ function Properties() {
               <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {PROPERTIES.filter((p) => p.group === group).map((p) => (
                   <div
+                    data-project={p.slug}
                     key={p.slug}
                     className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-lg"
                   >

@@ -12,6 +12,7 @@ import { type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
+import { Tracking } from "../components/site/Tracking";
 import { WhatsAppButton } from "../components/site/WhatsAppButton";
 
 function NotFoundComponent() {
@@ -135,6 +136,7 @@ function RootComponent() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <Tracking />
     </QueryClientProvider>
   );
 }

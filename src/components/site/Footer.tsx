@@ -68,6 +68,17 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-5 py-6 text-xs sm:px-8">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-wrap gap-4">
+              <Link to="/privacy" className="hover:text-gold">
+                Privacy notice
+              </Link>
+              <button
+                onClick={() => window.dispatchEvent(new Event("sv-cookie-preferences"))}
+                className="hover:text-gold"
+              >
+                Cookie preferences
+              </button>
+            </div>
             <p>© {new Date().getFullYear()} Space Value. All rights reserved.</p>
             <p>
               Developed by{" "}

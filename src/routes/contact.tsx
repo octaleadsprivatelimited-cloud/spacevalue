@@ -2,7 +2,8 @@ import { pageMetadata } from "@/lib/site";
 import { createFileRoute } from "@tanstack/react-router";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
-import { CONTACT, PROPERTIES } from "@/components/site/data";
+import { CONTACT } from "@/components/site/data";
+import { EnquiryForm } from "@/components/site/EnquiryForm";
 import villa from "@/assets/villa.jpg";
 
 export const Route = createFileRoute("/contact")({
@@ -19,7 +20,7 @@ function Contact() {
       <PageHero
         eyebrow="Contact"
         title="Start with a conversation."
-        subtitle="Send us your requirement and we'll respond with a shortlist the same working day."
+        subtitle="Share your home preferences, request project details or arrange a site visit with our team."
         image={villa}
       />
 
@@ -93,107 +94,9 @@ function Contact() {
             </div>
           </div>
 
-          <div className="bg-secondary/60 p-7 sm:p-10">
-            <p className="eyebrow">Enquiry</p>
-            <h3 className="mt-3 font-display text-2xl text-ink sm:text-3xl">
-              Tell us what you're looking for
-            </h3>
-            <form
-              className="mt-8 space-y-5"
-              action={`mailto:${CONTACT.email}`}
-              method="post"
-              encType="text/plain"
-            >
-              <Field label="Full name" name="name" placeholder="Your name" required />
-              <Field
-                label="Phone"
-                name="phone"
-                type="tel"
-                placeholder={CONTACT.phoneDisplay}
-                required
-              />
-              <Field label="Email" name="email" type="email" placeholder="you@email.com" />
-              <div>
-                <label
-                  htmlFor="project"
-                  className="block text-[0.65rem] tracking-[0.18em] text-muted-foreground uppercase"
-                >
-                  Project of interest
-                </label>
-                <select
-                  id="project"
-                  name="project"
-                  className="mt-2 w-full border border-input bg-background px-4 py-3 text-sm text-ink focus:border-gold focus:outline-none"
-                >
-                  <option>Not sure yet</option>
-                  {PROPERTIES.map((p) => (
-                    <option key={p.slug}>
-                      {p.name} — {p.location}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-[0.65rem] tracking-[0.18em] text-muted-foreground uppercase"
-                >
-                  Requirement
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  placeholder="Budget, configuration, preferred locality, possession timeline…"
-                  className="mt-2 w-full border border-input bg-background px-4 py-3 text-sm text-ink focus:border-gold focus:outline-none"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-gold px-7 py-4 text-xs tracking-[0.2em] text-ink uppercase transition-opacity hover:opacity-90"
-              >
-                Send enquiry
-              </button>
-              <p className="text-xs text-muted-foreground">
-                Prefer instant? WhatsApp us on {CONTACT.phoneDisplay}.
-              </p>
-            </form>
-          </div>
+          <EnquiryForm />
         </div>
       </section>
     </>
-  );
-}
-
-function Field({
-  label,
-  name,
-  type = "text",
-  placeholder,
-  required,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  placeholder?: string;
-  required?: boolean;
-}) {
-  return (
-    <div>
-      <label
-        htmlFor={name}
-        className="block text-[0.65rem] tracking-[0.18em] text-muted-foreground uppercase"
-      >
-        {label}
-      </label>
-      <input
-        id={name}
-        name={name}
-        type={type}
-        required={required}
-        placeholder={placeholder}
-        className="mt-2 w-full border border-input bg-background px-4 py-3 text-sm text-ink placeholder:text-muted-foreground/60 focus:border-gold focus:outline-none"
-      />
-    </div>
   );
 }

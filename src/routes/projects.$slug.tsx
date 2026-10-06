@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { MapPin, MessageCircle, Phone, ArrowUpRight } from "lucide-react";
 import { CONTACT, PROPERTIES, RERA, propertyWhatsAppUrl } from "@/components/site/data";
 import { PropertyImage } from "@/components/site/PropertyImage";
+import { EnquiryForm } from "@/components/site/EnquiryForm";
 import { projectMetadata } from "@/lib/site";
 
 export const Route = createFileRoute("/projects/$slug")({
@@ -19,7 +20,7 @@ function ProjectLanding() {
   const enquiry = propertyWhatsAppUrl(property);
   const visit = `https://wa.me/${CONTACT.phoneRaw}?text=${encodeURIComponent(`Hi Space Value, I would like to arrange a site visit for ${property.name} (${property.location}). Please share the available dates and confirm the project and phase.`)}`;
   return (
-    <>
+    <div data-project={property.slug}>
       <section className="mx-auto max-w-7xl px-5 pt-32 pb-14 sm:px-8 sm:pt-40 sm:pb-20">
         <div className="grid items-center gap-9 lg:grid-cols-2 lg:gap-14">
           <div>
@@ -52,6 +53,9 @@ function ProjectLanding() {
                 <Phone size={18} aria-hidden="true" />
                 Call our team
               </a>
+              <a href="#enquire" className="self-center px-2 text-sm underline">
+                Share your requirements
+              </a>
             </div>
             <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
               Space Value is a property channel partner. TG RERA agent: {RERA.number}. Enquiries are
@@ -62,6 +66,9 @@ function ProjectLanding() {
             <PropertyImage image={property.image} priority />
           </div>
         </div>
+      </section>
+      <section className="mx-auto max-w-3xl px-5 pb-14 sm:px-8">
+        <EnquiryForm property={property} />
       </section>
       <section className="border-y border-border bg-secondary/50 px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-7xl">
@@ -159,6 +166,6 @@ function ProjectLanding() {
           Browse all properties
         </Link>
       </section>
-    </>
+    </div>
   );
 }
