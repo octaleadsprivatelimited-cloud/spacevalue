@@ -1,4 +1,4 @@
-import { CONTACT } from "@/components/site/data";
+import { CONTACT, PROPERTIES } from "@/components/site/data";
 
 export const SITE_URL = "https://www.spacevalue.co.in";
 
@@ -6,7 +6,7 @@ const PAGES: Record<string, { title: string; description: string }> = {
   "/": {
     title: "Space Value | Real Estate Channel Partner in Hyderabad",
     description:
-      "Explore apartments, villas and townships in Hyderabad with Space Value. Contact our real estate channel partner team to discuss your requirements and site visits.",
+      "Explore Neopolis, Financial District and Tellapur projects, Prestige properties and Osman Nagar villas with Space Value. Enquire about details and site visits.",
   },
   "/about": {
     title: "About Space Value | Hyderabad Property Advisors",
@@ -14,14 +14,14 @@ const PAGES: Record<string, { title: string; description: string }> = {
       "Meet Space Value, a real estate channel partner in Hyderabad. Learn about our property advisory, site visits and support through the home-buying process.",
   },
   "/properties": {
-    title: "Hyderabad Apartments & Villas | Space Value Properties",
+    title: "Hyderabad Projects & Osman Nagar Villas | Space Value",
     description:
-      "Browse apartments, villas and township homes in Kokapet, Tellapur and Hyderabad. Contact Space Value for current availability, pricing and project details.",
+      "Browse Neopolis, Financial District and Tellapur projects, Prestige enquiries and Osman Nagar villas. Contact Space Value for pricing, brochures and site visits.",
   },
   "/gallery": {
     title: "Hyderabad Property Gallery | Space Value",
     description:
-      "Explore the Space Value property gallery featuring residential towers, villa exteriors, interiors and communities in Hyderabad. Contact us to arrange a site visit.",
+      "Browse illustrative residential architecture, villa exteriors and interiors with Space Value. Request official project brochures and arrange a Hyderabad site visit.",
   },
   "/rera": {
     title: "TG RERA Certificate A02500000572 | Space Value",
@@ -65,6 +65,22 @@ export function pageMetadata(path: string) {
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [
+            ...(path === "/properties"
+              ? [
+                  {
+                    "@type": "ItemList",
+                    "@id": `${SITE_URL}/properties#projects`,
+                    name: "Hyderabad project and villa enquiries",
+                    numberOfItems: PROPERTIES.length,
+                    itemListElement: PROPERTIES.map((property, index) => ({
+                      "@type": "ListItem",
+                      position: index + 1,
+                      name: `${property.name} — ${property.location}`,
+                      url: `${SITE_URL}/properties#${property.slug}`,
+                    })),
+                  },
+                ]
+              : []),
             {
               "@type": "Organization",
               "@id": `${SITE_URL}/#organization`,

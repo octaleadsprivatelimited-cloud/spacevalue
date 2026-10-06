@@ -23,70 +23,153 @@ export const NAV = [
   { to: "/contact", label: "Contact" },
 ] as const;
 
+export const PROPERTY_GROUPS = [
+  "Neopolis",
+  "Financial District",
+  "Tellapur",
+  "Prestige projects",
+  "Osman Nagar villas",
+] as const;
 export type Property = {
   slug: string;
   name: string;
   location: string;
-  config: string;
-  size: string;
-  price: string;
-  status: string;
-  rera: string;
+  group: (typeof PROPERTY_GROUPS)[number];
   image: "tower" | "interior" | "villa" | "township";
-  highlights: string[];
 };
 
 export const PROPERTIES: Property[] = [
   {
-    slug: "aurora-heights",
-    name: "Aurora Heights",
-    location: "Kokapet, Hyderabad",
-    config: "3 & 4 BHK Sky Residences",
-    size: "2,180 – 3,640 sq.ft",
-    price: "₹ 2.640 Cr onwards",
-    status: "Under construction",
-    rera: "P02400007312",
+    slug: "yula-neo",
+    name: "Yula Neo",
+    location: "Neopolis, Hyderabad",
+    group: "Neopolis",
     image: "tower",
-    highlights: ["42-storey twin towers", "Infinity edge sky deck", "70% open landscape"],
   },
   {
-    slug: "the-meridian",
-    name: "The Meridian",
+    slug: "brigade",
+    name: "Brigade",
+    location: "Neopolis, Hyderabad",
+    group: "Neopolis",
+    image: "tower",
+  },
+  {
+    slug: "msn-reality",
+    name: "MSN Reality",
+    location: "Neopolis, Hyderabad",
+    group: "Neopolis",
+    image: "tower",
+  },
+  {
+    slug: "ghr-cascade",
+    name: "GHR Cascade",
+    location: "Neopolis, Hyderabad",
+    group: "Neopolis",
+    image: "tower",
+  },
+  {
+    slug: "sattva-lake-ridge",
+    name: "Sattva Lake Ridge",
+    location: "Neopolis, Hyderabad",
+    group: "Neopolis",
+    image: "tower",
+  },
+  {
+    slug: "sattva-logo",
+    name: "Sattva Logo",
+    location: "Neopolis, Hyderabad",
+    group: "Neopolis",
+    image: "tower",
+  },
+  {
+    slug: "godrej-property",
+    name: "Godrej Property",
+    location: "Neopolis, Hyderabad",
+    group: "Neopolis",
+    image: "tower",
+  },
+  {
+    slug: "rajapushpa",
+    name: "Rajapushpa",
+    location: "Neopolis, Hyderabad",
+    group: "Neopolis",
+    image: "tower",
+  },
+  {
+    slug: "asbl-broadway",
+    name: "ASBL Broadway",
     location: "Financial District, Hyderabad",
-    config: "3 BHK Premium Apartments",
-    size: "1,860 – 2,420 sq.ft",
-    price: "₹ 1.780 Cr onwards",
-    status: "Ready to move",
-    rera: "P02400005188",
-    image: "interior",
-    highlights: ["Fully fitted interiors", "Podium clubhouse", "Walk to ORR exit"],
+    group: "Financial District",
+    image: "tower",
   },
   {
-    slug: "casa-verde-villas",
-    name: "Casa Verde Villas",
+    slug: "asbl-loft",
+    name: "ASBL Loft",
+    location: "Financial District, Hyderabad",
+    group: "Financial District",
+    image: "tower",
+  },
+  {
+    slug: "myscape-songs-of-the-sun",
+    name: "Myscape Songs of the Sun",
+    location: "Financial District, Hyderabad",
+    group: "Financial District",
+    image: "tower",
+  },
+  {
+    slug: "myscape-palma",
+    name: "Myscape Palma",
+    location: "Financial District, Hyderabad",
+    group: "Financial District",
+    image: "tower",
+  },
+  {
+    slug: "raghava-cinq",
+    name: "Raghava Cinq",
+    location: "Financial District, Hyderabad",
+    group: "Financial District",
+    image: "tower",
+  },
+  {
+    slug: "gamya",
+    name: "Gamya",
     location: "Tellapur, Hyderabad",
-    config: "4 BHK Independent Villas",
-    size: "3,900 – 4,750 sq.ft",
-    price: "₹ 4.250 Cr onwards",
-    status: "Few units left",
-    rera: "P02400004907",
-    image: "villa",
-    highlights: ["Private plunge pool", "Triple height foyer", "Gated 96-villa enclave"],
+    group: "Tellapur",
+    image: "tower",
   },
   {
-    slug: "greenwood-county",
-    name: "Greenwood County",
-    location: "Shankarpally Road, Hyderabad",
-    config: "2 & 3 BHK Township Homes",
-    size: "1,240 – 1,910 sq.ft",
-    price: "₹ 92.5 L onwards",
-    status: "New launch",
-    rera: "P02400008441",
-    image: "township",
-    highlights: [
-      "18-acre integrated township",
-      "40,000 sq.ft clubhouse",
-      "Cricket & tennis courts",
-    ],
+    slug: "muppa-projects",
+    name: "Muppa Projects",
+    location: "Tellapur, Hyderabad",
+    group: "Tellapur",
+    image: "tower",
+  },
+  {
+    slug: "tridasa",
+    name: "Tridasa",
+    location: "Tellapur, Hyderabad",
+    group: "Tellapur",
+    image: "tower",
+  },
+  {
+    slug: "prestige-projects",
+    name: "Prestige Projects",
+    location: "Hyderabad",
+    group: "Prestige projects",
+    image: "tower",
+  },
+  {
+    slug: "hallmark-villas",
+    name: "Hallmark Villas",
+    location: "Osman Nagar, Hyderabad",
+    group: "Osman Nagar villas",
+    image: "villa",
+  },
+  {
+    slug: "muppa-villas",
+    name: "Muppa Villas",
+    location: "Osman Nagar, Hyderabad",
+    group: "Osman Nagar villas",
+    image: "villa",
   },
 ];

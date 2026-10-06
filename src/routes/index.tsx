@@ -156,12 +156,12 @@ function Home() {
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2">
-            {PROPERTIES.slice(0, 4).map((p) => (
+            {[PROPERTIES[0]!, PROPERTIES[8]!, PROPERTIES[13]!, PROPERTIES[17]!].map((p) => (
               <article key={p.slug} className="group bg-card">
                 <div className="overflow-hidden">
                   <img
                     src={images[p.image]}
-                    alt={p.name}
+                    alt="Illustrative residential architecture"
                     width={1408}
                     height={1008}
                     loading="lazy"
@@ -169,19 +169,23 @@ function Home() {
                   />
                 </div>
                 <div className="p-6 sm:p-8">
-                  <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3">
-                    <h3 className="min-w-0 truncate font-display text-2xl text-ink">{p.name}</h3>
+                  <div className="flex flex-wrap items-start gap-3">
+                    <h3 className="min-w-0 font-display text-2xl text-ink">{p.name}</h3>
                     <span className="shrink-0 border border-gold/50 px-3 py-1 text-[0.6rem] tracking-[0.15em] text-gold uppercase">
-                      {p.status}
+                      {p.group}
                     </span>
                   </div>
                   <p className="mt-1 text-sm text-muted-foreground">{p.location}</p>
-                  <p className="mt-4 text-sm text-ink">{p.config}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{p.size}</p>
-                  <p className="mt-5 font-display text-2xl text-gold">{p.price}</p>
-                  <p className="mt-2 text-[0.65rem] tracking-[0.15em] text-muted-foreground uppercase">
-                    RERA {p.rera}
+                  <p className="mt-4 text-xs text-muted-foreground">
+                    Illustrative image. Contact us for project brochures and current availability.
                   </p>
+                  <Link
+                    to="/properties"
+                    hash={p.slug}
+                    className="mt-5 inline-flex text-sm text-ink underline underline-offset-4"
+                  >
+                    View project enquiry
+                  </Link>
                 </div>
               </article>
             ))}

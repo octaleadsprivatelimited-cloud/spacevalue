@@ -127,7 +127,9 @@ function Contact() {
                 >
                   <option>Not sure yet</option>
                   {PROPERTIES.map((p) => (
-                    <option key={p.slug}>{p.name}</option>
+                    <option key={p.slug}>
+                      {p.name} — {p.location}
+                    </option>
                   ))}
                 </select>
               </div>

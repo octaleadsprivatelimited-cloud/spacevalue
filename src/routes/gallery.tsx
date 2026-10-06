@@ -12,12 +12,10 @@ export const Route = createFileRoute("/gallery")({
 });
 
 const ITEMS = [
-  { src: heroTower, title: "Aurora Heights", caption: "Kokapet · Tower elevation" },
-  { src: interiorLiving, title: "The Meridian", caption: "Financial District · Living room" },
-  { src: villa, title: "Casa Verde Villas", caption: "Tellapur · Pool deck" },
-  { src: township, title: "Greenwood County", caption: "Shankarpally Road · Aerial" },
-  { src: interiorLiving, title: "Show residence", caption: "Fitted interiors · 3 BHK" },
-  { src: heroTower, title: "Arrival lobby", caption: "Double height porte-cochère" },
+  { src: heroTower, title: "Residential towers", caption: "Illustrative architecture" },
+  { src: interiorLiving, title: "Living spaces", caption: "Interior inspiration" },
+  { src: villa, title: "Villa living", caption: "Illustrative exterior" },
+  { src: township, title: "Community living", caption: "Illustrative township" },
 ];
 
 function Gallery() {
@@ -26,7 +24,7 @@ function Gallery() {
       <PageHero
         eyebrow="Gallery"
         title="Look before you love."
-        subtitle="Elevations, interiors and amenity decks from the projects currently on our shelf."
+        subtitle="Illustrative architecture and interiors. These images are not photographs of the listed projects; contact us for official project brochures."
         image={villa}
       />
 

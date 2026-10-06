@@ -2,7 +2,7 @@ import { pageMetadata } from "@/lib/site";
 import { createFileRoute } from "@tanstack/react-router";
 import { ShieldCheck } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
-import { PROPERTIES, RERA } from "@/components/site/data";
+import { RERA } from "@/components/site/data";
 import interiorLiving from "@/assets/interior-living.jpg";
 
 export const Route = createFileRoute("/rera")({
@@ -110,24 +110,27 @@ function Rera() {
           </div>
 
           <div>
-            <p className="eyebrow">Project registration numbers</p>
-            <div className="mt-6 divide-y divide-border border-y border-border">
-              {PROPERTIES.map((p) => (
-                <div key={p.slug} className="grid gap-2 py-5 sm:grid-cols-[minmax(0,1fr)_auto]">
-                  <div className="min-w-0">
-                    <p className="font-display text-xl text-ink">{p.name}</p>
-                    <p className="text-sm text-muted-foreground">{p.location}</p>
-                  </div>
-                  <p className="text-sm tracking-[0.1em] text-gold sm:text-right">
-                    Project RERA {p.rera}
-                  </p>
-                </div>
-              ))}
-            </div>
-            <p className="mt-6 text-xs leading-relaxed text-muted-foreground">
-              Registration numbers shown are as disclosed by the respective developers. Space Value
-              is a marketing channel partner and does not own or develop these projects.
+            <p className="eyebrow">Project registration verification</p>
+            <h2 className="mt-4 font-display text-3xl text-ink">
+              Verify the exact project and phase.
+            </h2>
+            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
+              Request the developer's project registration number and brochure when enquiring. Match
+              the project name, phase and registration details on the official TG RERA portal before
+              booking.
             </p>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              The agent certificate above does not replace an individual project's registration.
+              Project registration numbers will be listed once confirmed.
+            </p>
+            <a
+              href={RERA.portal}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-block text-sm underline underline-offset-4"
+            >
+              Verify on TG RERA
+            </a>
           </div>
         </div>
       </section>
