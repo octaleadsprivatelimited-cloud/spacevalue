@@ -1,0 +1,211 @@
+[
+  {
+    "card": "yula-neo",
+    "projectShown": "Yula NEO",
+    "sourcePage": "https://www.yulaconstructions.com/",
+    "imageUrl": "https://www.yulaconstructions.com/assets/neo-towers-render-v1-CzAellGv.webp",
+    "logoUrl": "https://www.yulaconstructions.com/assets/yula-logo-dark-B_cllcbX.webp",
+    "localImage": "/images/projects/yula-neo.webp",
+    "label": "Developer render",
+    "notes": null,
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "brigade",
+    "projectShown": "Brigade Gateway",
+    "sourcePage": "https://www.brigadegroup.com/residential-showcase-2026/index.html",
+    "imageUrl": "https://www.brigadegroup.com/residential-showcase-2026/assets/prop/neopolis.webp",
+    "logoUrl": "https://www.brigadegroup.com/residential-showcase-2026/assets/brigade.webp",
+    "localImage": "/images/projects/brigade.webp",
+    "label": "Developer render",
+    "notes": "Shown: Brigade Gateway, Neopolis",
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "msn-reality",
+    "projectShown": "ONE by MSN",
+    "sourcePage": "https://www.msnrealty.com/project/onebymsn.html",
+    "imageUrl": "https://www.msnrealty.com/project/media/elivations/elivation_one.jpg",
+    "logoUrl": "https://www.msnrealty.com/project/media/logo.png",
+    "localImage": "/images/projects/msn-reality.webp",
+    "label": "Developer render",
+    "notes": "Shown: ONE by MSN, Neopolis",
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "ghr-cascade",
+    "projectShown": "The Cascades Neopolis",
+    "sourcePage": "https://thecascades.in/",
+    "imageUrl": "https://thecascades.in/assets/img/glance-towers.webp",
+    "logoUrl": "https://thecascades.in/assets/logo.svg",
+    "localImage": "/images/projects/ghr-cascade.webp",
+    "label": "Developer render",
+    "notes": null,
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "sattva-lake-ridge",
+    "projectShown": "Sattva Lake Ridge",
+    "sourcePage": "https://sattvagroup.com/residential/sattva-lake-ridge/",
+    "imageUrl": "https://sattvagroup.com/wp-content/uploads/2023/05/Lake-Ridge-banner-2.webp",
+    "logoUrl": "https://sattvagroup.com/wp-content/uploads/2023/02/Sattva-logo-color.gif",
+    "localImage": "/images/projects/sattva-lake-ridge.webp",
+    "label": "Developer render",
+    "notes": null,
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "sattva-logo",
+    "projectShown": "Sattva Neopolis upcoming apartment project",
+    "sourcePage": "https://sattvagroup.com/residential/hyderabad/",
+    "imageUrl": "https://sattvagroup.com/wp-content/uploads/2026/09/hydrabad-project-ap.webp",
+    "logoUrl": "https://sattvagroup.com/wp-content/uploads/2023/02/Sattva-logo-color.gif",
+    "localImage": "/images/projects/sattva-logo.webp",
+    "label": "Developer preview",
+    "notes": "Shown: Sattva’s upcoming Neopolis apartment project",
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "godrej-property",
+    "projectShown": "Godrej Madison Avenue, Kokapet",
+    "sourcePage": "https://www.godrejproperties.com/landing-page/hyderabad/residential/godrej-madison-avenue/?campid=100039",
+    "imageUrl": "https://www.godrejproperties.com/landing-page/hyderabad/residential/godrej-madison-avenue/landing_page/assets/images/landing/1.intro/banner02_v1-compressed.webp",
+    "logoUrl": "https://www.godrejproperties.com/landing-page/hyderabad/residential/godrej-madison-avenue/landing_page/images/Godrej_Properties_Logo-compressed.webp",
+    "localImage": "/images/projects/godrej-property.webp",
+    "label": "Portfolio render",
+    "notes": "Developer portfolio: Madison Avenue, Kokapet. Ask us about Neopolis options.",
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "rajapushpa",
+    "projectShown": "Rajapushpa Skyra",
+    "sourcePage": "https://rajapushpa.in/projects/residential/skyra-apartments-kokapet-hyderabad",
+    "imageUrl": "https://backend.rajapushpa.in/uploads/Desktop_Skyra_1920_950_ee374ec3fd.jpg",
+    "logoUrl": "https://rajapushpa.in/assets/logo.svg",
+    "localImage": "/images/projects/rajapushpa.webp",
+    "label": "Developer render",
+    "notes": "Shown: Rajapushpa Skyra, Neopolis",
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "asbl-broadway",
+    "projectShown": "ASBL Broadway",
+    "sourcePage": "https://asbl.in/broadway/",
+    "imageUrl": "https://cdn.asbl.in/Broadway/Meta_Data/q-30/project-rendrer.webp",
+    "logoUrl": "https://cdn.asbl.in/Broadway/Web/navbar/q-30/broadway-logo.webp",
+    "localImage": "/images/projects/asbl-broadway.webp",
+    "label": "Developer render",
+    "notes": null,
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "asbl-loft",
+    "projectShown": "ASBL Loft",
+    "sourcePage": "https://asbl.in/loft/",
+    "imageUrl": "https://cdn.asbl.in/Loft/Meta_Data/Landing-1.png",
+    "logoUrl": "https://asbl.in/loft/nav/LOFT_LOGO.svg",
+    "localImage": "/images/projects/asbl-loft.webp",
+    "label": "Developer render",
+    "notes": null,
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "myscape-songs-of-the-sun",
+    "projectShown": "Myscape Songs of the Sun",
+    "sourcePage": "https://myscape.in/",
+    "imageUrl": "https://myscape.in/wp-content/uploads/2024/11/sots.jpg",
+    "logoUrl": "https://myscape.in/wp-content/uploads/2024/11/PropLogo-Copy.png",
+    "localImage": "/images/projects/myscape-songs-of-the-sun.webp",
+    "label": "Developer render",
+    "notes": null,
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "myscape-palma",
+    "projectShown": "Myscape Palma",
+    "sourcePage": "https://myscape.in/palma/",
+    "imageUrl": "https://myscape.in/wp-content/uploads/2026/06/Facade-evening-view.png",
+    "logoUrl": "https://myscape.in/wp-content/uploads/2026/06/Palma-Logo.png",
+    "localImage": "/images/projects/myscape-palma.webp",
+    "label": "Developer render",
+    "notes": null,
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "raghava-cinq",
+    "projectShown": "CINQ by Raghava",
+    "sourcePage": "https://cniq.raghavaprojects.in/",
+    "imageUrl": "https://cniq.raghavaprojects.in/images/gallery/4.jpg",
+    "logoUrl": "https://cniq.raghavaprojects.in/images/logo.PNG",
+    "localImage": "/images/projects/raghava-cinq.webp",
+    "label": "Developer render",
+    "notes": null,
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "gamya",
+    "projectShown": "Gamya by Supadha",
+    "sourcePage": "https://supadha.com/gamya/",
+    "imageUrl": "https://supadha.com/wp-content/uploads/2024/05/Web-Banners-06-1024x778.jpg",
+    "logoUrl": "https://supadha.com/wp-content/uploads/2024/02/gamya-logo-dark.png",
+    "localImage": "/images/projects/gamya.webp",
+    "label": "Developer render",
+    "notes": null,
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "muppa-projects",
+    "projectShown": "Muppa’s Melody",
+    "sourcePage": "https://muppaprojects.com/muppa-melody/",
+    "imageUrl": "https://muppaprojects.com/wp-content/uploads/2025/02/Bird-Eye-View-compressed.webp",
+    "logoUrl": "https://muppaprojects.com/wp-content/uploads/2024/05/Artboard-16-copy-2.svg",
+    "localImage": "/images/projects/muppa-projects.webp",
+    "label": "Developer render",
+    "notes": "Shown: Muppa’s Melody, Tellapur",
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "tridasa",
+    "projectShown": "My Home Tridasa",
+    "sourcePage": "https://www.myhomeconstructions.com/my-home-tridasa",
+    "imageUrl": "https://backend.myhomeconstructions.com/uploads/Banner_22_f3fd80096c.png",
+    "logoUrl": "https://www.myhomeconstructions.com/assets/myhome/logo.svg",
+    "localImage": "/images/projects/tridasa.webp",
+    "label": "Developer image",
+    "notes": null,
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "prestige-projects",
+    "projectShown": "Prestige Clairemont",
+    "sourcePage": "https://www.prestigeconstructions.com/residential-projects/hyderabad/prestige-clairemont",
+    "imageUrl": "https://dsc1bri60i31v.cloudfront.net/projectgallery/566f179a-bf98-4739-8dea-67cb887b68bb.webp",
+    "logoUrl": "https://d1t2fddy6amcvs.cloudfront.net/images/logo.svg",
+    "localImage": "/images/projects/prestige-projects.webp",
+    "label": "Developer render",
+    "notes": "Shown: Prestige Clairemont, Kokapet",
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "hallmark-villas",
+    "projectShown": "Hallmark County",
+    "sourcePage": "https://hallmarkinfracon.in/hallmark-county/",
+    "imageUrl": "https://hallmarkinfracon.in/wp-content/uploads/2026/09/330_EAST_Street-View-Copy-e1788949105233.webp",
+    "logoUrl": "https://hallmarkinfracon.in/wp-content/uploads/2026/09/Hallmark-infracon-logo-e1788776312709.webp",
+    "localImage": "/images/projects/hallmark-villas.webp",
+    "label": "Developer render",
+    "notes": "Shown: Hallmark County, Osman Nagar",
+    "retrieved": "2026-10-06"
+  },
+  {
+    "card": "muppa-villas",
+    "projectShown": "Muppa’s Indraprastha",
+    "sourcePage": "https://muppaprojects.com/villas-in-tellapur-gopanpally-gachibowli-hyderabad/",
+    "imageUrl": "https://muppaprojects.com/wp-content/uploads/2025/02/Indraprastha-2.webp",
+    "logoUrl": "https://muppaprojects.com/wp-content/uploads/2024/05/Artboard-16-copy-2.svg",
+    "localImage": "/images/projects/muppa-villas.webp",
+    "label": "Developer image",
+    "notes": "Shown: Muppa’s Indraprastha, Osman Nagar",
+    "retrieved": "2026-10-06"
+  }
+]

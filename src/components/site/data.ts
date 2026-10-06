@@ -1,3 +1,5 @@
+import type { ProjectMediaKey } from "./project-media";
+
 export const RERA = {
   number: "A02500000572",
   registeredName: "SV CONSULTANCE",
@@ -35,7 +37,7 @@ export type Property = {
   name: string;
   location: string;
   group: (typeof PROPERTY_GROUPS)[number];
-  image: "tower" | "interior" | "villa" | "township";
+  image: ProjectMediaKey;
 };
 
 export const PROPERTIES: Property[] = [
@@ -44,133 +46,133 @@ export const PROPERTIES: Property[] = [
     name: "Yula Neo",
     location: "Neopolis, Hyderabad",
     group: "Neopolis",
-    image: "tower",
+    image: "yula-neo",
   },
   {
     slug: "brigade",
     name: "Brigade",
     location: "Neopolis, Hyderabad",
     group: "Neopolis",
-    image: "township",
+    image: "brigade",
   },
   {
     slug: "msn-reality",
     name: "MSN Reality",
     location: "Neopolis, Hyderabad",
     group: "Neopolis",
-    image: "tower",
+    image: "msn-reality",
   },
   {
     slug: "ghr-cascade",
     name: "GHR Cascade",
     location: "Neopolis, Hyderabad",
     group: "Neopolis",
-    image: "tower",
+    image: "ghr-cascade",
   },
   {
     slug: "sattva-lake-ridge",
     name: "Sattva Lake Ridge",
     location: "Neopolis, Hyderabad",
     group: "Neopolis",
-    image: "tower",
+    image: "sattva-lake-ridge",
   },
   {
     slug: "sattva-logo",
-    name: "Sattva Logo",
+    name: "Sattva Lago",
     location: "Neopolis, Hyderabad",
     group: "Neopolis",
-    image: "tower",
+    image: "sattva-logo",
   },
   {
     slug: "godrej-property",
     name: "Godrej Property",
     location: "Neopolis, Hyderabad",
     group: "Neopolis",
-    image: "tower",
+    image: "godrej-property",
   },
   {
     slug: "rajapushpa",
     name: "Rajapushpa",
     location: "Neopolis, Hyderabad",
     group: "Neopolis",
-    image: "tower",
+    image: "rajapushpa",
   },
   {
     slug: "asbl-broadway",
     name: "ASBL Broadway",
     location: "Financial District, Hyderabad",
     group: "Financial District",
-    image: "tower",
+    image: "asbl-broadway",
   },
   {
     slug: "asbl-loft",
     name: "ASBL Loft",
     location: "Financial District, Hyderabad",
     group: "Financial District",
-    image: "tower",
+    image: "asbl-loft",
   },
   {
     slug: "myscape-songs-of-the-sun",
     name: "Myscape Songs of the Sun",
     location: "Financial District, Hyderabad",
     group: "Financial District",
-    image: "interior",
+    image: "myscape-songs-of-the-sun",
   },
   {
     slug: "myscape-palma",
     name: "Myscape Palma",
     location: "Financial District, Hyderabad",
     group: "Financial District",
-    image: "interior",
+    image: "myscape-palma",
   },
   {
     slug: "raghava-cinq",
     name: "Raghava Cinq",
     location: "Financial District, Hyderabad",
     group: "Financial District",
-    image: "tower",
+    image: "raghava-cinq",
   },
   {
     slug: "gamya",
     name: "Gamya",
     location: "Tellapur, Hyderabad",
     group: "Tellapur",
-    image: "township",
+    image: "gamya",
   },
   {
     slug: "muppa-projects",
     name: "Muppa Projects",
     location: "Tellapur, Hyderabad",
     group: "Tellapur",
-    image: "township",
+    image: "muppa-projects",
   },
   {
     slug: "tridasa",
     name: "Tridasa",
     location: "Tellapur, Hyderabad",
     group: "Tellapur",
-    image: "township",
+    image: "tridasa",
   },
   {
     slug: "prestige-projects",
     name: "Prestige Projects",
     location: "Hyderabad",
     group: "Prestige projects",
-    image: "township",
+    image: "prestige-projects",
   },
   {
     slug: "hallmark-villas",
     name: "Hallmark Villas",
     location: "Osman Nagar, Hyderabad",
     group: "Osman Nagar villas",
-    image: "villa",
+    image: "hallmark-villas",
   },
   {
     slug: "muppa-villas",
     name: "Muppa Villas",
     location: "Osman Nagar, Hyderabad",
     group: "Osman Nagar villas",
-    image: "villa",
+    image: "muppa-villas",
   },
 ];
 

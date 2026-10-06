@@ -5,7 +5,7 @@ import heroTower from "@/assets/hero-tower.jpg";
 import interiorLiving from "@/assets/interior-living.jpg";
 import township from "@/assets/township.jpg";
 import { CONTACT, PROPERTIES, PROPERTY_GROUPS } from "@/components/site/data";
-import { PROPERTY_IMAGES } from "@/components/site/property-images";
+import { PropertyImage } from "@/components/site/PropertyImage";
 
 export const Route = createFileRoute("/")({
   head: () => pageMetadata("/"),
@@ -16,25 +16,25 @@ const locations = [
   {
     name: "Neopolis",
     group: "Neopolis",
-    image: "tower",
+    image: "ghr-cascade",
     description: "Explore high-rise project enquiries in Neopolis.",
   },
   {
     name: "Financial District",
     group: "Financial District",
-    image: "interior",
+    image: "asbl-loft",
     description: "Discover projects in Hyderabad's Financial District.",
   },
   {
     name: "Tellapur",
     group: "Tellapur",
-    image: "township",
+    image: "gamya",
     description: "Find your next home among our Tellapur project enquiries.",
   },
   {
     name: "Osman Nagar",
     group: "Osman Nagar villas",
-    image: "villa",
+    image: "muppa-villas",
     description: "Explore villa enquiries in Osman Nagar.",
   },
 ] as const;
@@ -182,19 +182,7 @@ function Home() {
                 aria-label={`Explore projects in ${location.name}`}
                 className="group block overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
               >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={PROPERTY_IMAGES[location.image].src}
-                    alt={PROPERTY_IMAGES[location.image].alt}
-                    width={1408}
-                    height={1008}
-                    loading="lazy"
-                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 motion-reduce:transition-none group-hover:scale-105"
-                  />
-                  <span className="absolute bottom-3 right-3 rounded-full bg-ink/75 px-3 py-1 text-[0.65rem] text-white">
-                    Illustrative image
-                  </span>
-                </div>
+                <PropertyImage image={location.image} />
                 <div className="p-6 sm:p-8">
                   <p className="text-xs tracking-[0.15em] text-muted-foreground uppercase">
                     {PROPERTIES.filter((p) => p.group === location.group).length} project enquiries
