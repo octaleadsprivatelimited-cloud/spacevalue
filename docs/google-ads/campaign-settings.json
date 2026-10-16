@@ -1,5 +1,5 @@
 {
-  "state": "Prepared locally for review; Google Ads platform setup is not yet verified",
+  "state": "Review package prepared; unpublished Google Ads draft started; final saving blocked by Google identity check",
   "accountEmail": "spcvalue@gmail.com",
   "accountId": "244-029-3549",
   "campaign": "Space Value | Hyderabad Projects | Search",
@@ -65,5 +65,22 @@
     "status": "Not verified; do not treat repository account details as proof of a live manager link"
   },
   "accountVerified": "Google Ads UI verified Space Value 244-029-3549, spcvalue@gmail.com on 16 October 2026",
-  "accountBlocker": "Account paused — complete advertiser verification"
+  "accountBlocker": "Account paused — complete advertiser verification",
+  "platformDraft": {
+    "campaignId": "281499343602002",
+    "draftId": "10218745880",
+    "name": "Space Value | Hyderabad Projects | Calls | Review",
+    "goal": "Phone calls from ads",
+    "currentStage": "Custom budget step; identity check pending",
+    "enteredAdGroups": [
+      "Godrej Neopolis (shown as Ad group 1 in wizard)"
+    ],
+    "enteredKeywords": 8,
+    "adHeadlines": 7,
+    "adDescriptions": 2,
+    "callAssetPhone": "8686256748",
+    "callAssetStatus": "Added in wizard; persistence and qualified call settings still need verification after identity check",
+    "budgetStatus": "₹300 proposal; platform custom budget not yet saved",
+    "published": false
+  }
 }
