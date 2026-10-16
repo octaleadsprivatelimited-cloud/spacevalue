@@ -131,8 +131,10 @@ export function pageMetadata(path: string) {
 }
 
 export function projectMetadata(property: Property) {
-  const title = `${property.name} | Brochure & Site Visits | Space Value`;
-  const description = `Enquire about ${property.name} in ${property.location}. Request the latest brochure, pricing, available options and a site visit from Space Value.`;
+  const title = `${property.name} | Call Space Value | Property Enquiries`;
+  const description = property.offer
+    ? `${property.name} pre-launch offer now on. Call Space Value for current terms, pricing, project details and site visits.`
+    : `Call Space Value about ${property.name} in ${property.location}. Discuss pricing, the official brochure, project details and a site visit. No form needed.`;
   const url = `${SITE_URL}/projects/${property.slug}`;
   const media = PROJECT_MEDIA[property.image];
   return {

@@ -65,17 +65,17 @@ function Home() {
             final registration.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Link
-              to="/properties"
+            <a
+              href={`tel:+${CONTACT.phoneRaw}`}
               className="inline-flex items-center justify-center gap-2 bg-gold px-8 py-4 text-xs tracking-[0.2em] text-ink uppercase transition-opacity hover:opacity-90"
             >
-              View Properties <ArrowRight className="h-4 w-4" />
-            </Link>
+              Call Now <ArrowRight className="h-4 w-4" />
+            </a>
             <Link
-              to="/contact"
+              to="/properties"
               className="inline-flex items-center justify-center gap-2 border border-ivory/35 px-8 py-4 text-xs tracking-[0.2em] text-ivory uppercase transition-colors hover:border-gold hover:text-gold"
             >
-              Book a Site Visit
+              View Properties
             </Link>
           </div>
         </div>

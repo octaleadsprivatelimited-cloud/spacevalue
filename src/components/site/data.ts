@@ -31,6 +31,7 @@ export const PROPERTY_GROUPS = [
   "Tellapur",
   "Prestige projects",
   "Osman Nagar villas",
+  "Kokapet",
 ] as const;
 export type Property = {
   slug: string;
@@ -38,6 +39,10 @@ export type Property = {
   location: string;
   group: (typeof PROPERTY_GROUPS)[number];
   image: ProjectMediaKey;
+  offer?: {
+    headline: string;
+    description: string;
+  };
 };
 
 export const PROPERTIES: Property[] = [
@@ -57,7 +62,7 @@ export const PROPERTIES: Property[] = [
   },
   {
     slug: "msn-reality",
-    name: "MSN Reality",
+    name: "MSN Realty",
     location: "Neopolis, Hyderabad",
     group: "Neopolis",
     image: "msn-reality",
@@ -85,10 +90,15 @@ export const PROPERTIES: Property[] = [
   },
   {
     slug: "godrej-property",
-    name: "Godrej Property",
+    name: "Godrej Neopolis",
     location: "Neopolis, Hyderabad",
     group: "Neopolis",
     image: "godrej-property",
+    offer: {
+      headline: "Pre-launch offer now on",
+      description:
+        "Call Space Value about the ongoing Godrej Neopolis pre-launch offer. Ask for the applicable units, full pricing, eligibility and current offer validity before proceeding.",
+    },
   },
   {
     slug: "rajapushpa",
@@ -173,6 +183,13 @@ export const PROPERTIES: Property[] = [
     location: "Osman Nagar, Hyderabad",
     group: "Osman Nagar villas",
     image: "muppa-villas",
+  },
+  {
+    slug: "alekhya-homes",
+    name: "Alekhya Homes",
+    location: "Kokapet, Hyderabad",
+    group: "Kokapet",
+    image: "alekhya-homes",
   },
 ];
 

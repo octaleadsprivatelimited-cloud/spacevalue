@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { CONTACT } from "@/components/site/data";
-import { EnquiryForm } from "@/components/site/EnquiryForm";
+import { CallPanel } from "@/components/site/CallPanel";
 import villa from "@/assets/villa.jpg";
 
 export const Route = createFileRoute("/contact")({
@@ -78,12 +78,10 @@ function Contact() {
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <a
-                href={`https://wa.me/${CONTACT.phoneRaw}`}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`tel:+${CONTACT.phoneRaw}`}
                 className="bg-ink px-7 py-3.5 text-center text-xs tracking-[0.2em] text-ivory uppercase"
               >
-                Chat on WhatsApp
+                Call Now
               </a>
               <a
                 href={mailto("Site visit request — Space Value")}
@@ -94,7 +92,7 @@ function Contact() {
             </div>
           </div>
 
-          <EnquiryForm />
+          <CallPanel />
         </div>
       </section>
     </>

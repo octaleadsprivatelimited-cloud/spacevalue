@@ -1,10 +1,10 @@
 {
-  "state": "Prepared locally; not configured or launched in Google Ads",
+  "state": "Unpublished Google Ads draft saved at ₹300/day; full 11-group review package prepared; Octaleads MCC linked",
   "accountEmail": "spcvalue@gmail.com",
   "accountId": "244-029-3549",
   "campaign": "Space Value | Hyderabad Projects | Search",
   "type": "Search",
-  "status": "Paused until onboarding and tracking are completed",
+  "status": "Unpublished draft; user requested review before launch",
   "averageDailyBudgetINR": 300,
   "monthlyBudgetLimitINR": 9120,
   "potentialDailySpendINR": 600,
@@ -16,12 +16,12 @@
   ],
   "searchPartners": false,
   "displayNetwork": false,
-  "bidding": "Maximize clicks",
+  "bidding": "Maximize clicks with CPC cap for initial data collection; evaluate call conversion bidding after qualified call data is verified",
   "startingMaxCpcINR": 30,
   "autoTagging": true,
   "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=space_value_projects&utm_term={keyword}&utm_content={creative}",
-  "conversionStatus": "Not installed; requires actual Google Ads conversion ID and label after onboarding",
-  "primaryEnquiry": "WhatsApp; a click is enquiry intent, not a confirmed lead",
+  "conversionStatus": "Native Calls from ads verified as a primary account-default goal, Count One, 60-second minimum; conversion action 7848756455. GA4 phone contact_click exists with consent. Website answered-call tracking and Google Ads website ID/labels remain unconfigured.",
+  "primaryEnquiry": "Phone calls to +91 86862 56748; no form goal",
   "adGroups": [
     "yula-neo",
     "ghr-cascade",
@@ -32,7 +32,69 @@
     "myscape-palma",
     "raghava-cinq",
     "gamya",
-    "tridasa"
+    "tridasa",
+    "godrej-property"
   ],
-  "remainingProjects": "Landing pages prepared; developer-only entries and Sattva Lago require exact project confirmation before project-specific ads."
+  "remainingProjects": "Developer-only entries and Sattva Lago held for exact project confirmation. Alekhya Homes / Kokapet enquiry page added. Godrej Neopolis and the existence of a pre-launch offer confirmed by the user; specific terms and project/phase RERA still need confirmation before publication.",
+  "preparedOn": "2026-10-16",
+  "adSchedule": {
+    "timezone": "Asia/Kolkata",
+    "days": "Monday–Saturday",
+    "start": "09:30",
+    "end": "19:30",
+    "basis": "Published website contact hours; confirm staff availability before launch"
+  },
+  "callAsset": {
+    "country": "IN",
+    "phone": "8686256748",
+    "reporting": true,
+    "schedule": "Asset all days; campaign limits eligibility to Monday–Saturday 09:30–19:30 IST",
+    "status": "Business phone applied in the unpublished campaign wizard, with call reporting on; association must be rechecked before publication"
+  },
+  "conversionPlan": {
+    "primary": "Calls from ads lasting at least 60 seconds",
+    "count": "One",
+    "websitePhoneClicks": "Secondary only; never report as answered calls",
+    "websiteCalls": "Configure actual website call conversion and verify number replacement before launch",
+    "forms": "Not a primary conversion",
+    "whatsapp": "Secondary diagnostic only"
+  },
+  "mccLink": {
+    "manager": "Octaleads",
+    "managerId": "506-089-4911",
+    "status": "Linked: verified in Space Value → Access and security → Managers on 16 October 2026. Octaleads 506-089-4911 appears with Date linked 16 Oct 2026, Manager type Google Ads, Owner No; no pending link request remains.",
+    "linkedOn": "2026-10-16",
+    "owner": false
+  },
+  "accountVerified": "Google Ads UI verified Space Value 244-029-3549, spcvalue@gmail.com on 16 October 2026",
+  "accountBlocker": "Account paused — advertiser verification requires exact legal organisation name and registered address; D-U-N-S is optional. Account-level EU political-ad declaration completed as No.",
+  "platformDraft": {
+    "campaignId": "281499343602002",
+    "draftId": "10218745880",
+    "name": "Space Value | Hyderabad Projects | Calls | Review",
+    "goal": "Phone calls from ads",
+    "currentStage": "Saved and exited without publishing; visible Resume draft card in account Overview",
+    "enteredAdGroups": [
+      "Godrej Neopolis (shown as Ad group 1 in wizard)"
+    ],
+    "enteredKeywords": 8,
+    "adHeadlines": 10,
+    "adDescriptions": 3,
+    "callAssetPhone": "8686256748",
+    "callAssetStatus": "Applied in wizard; native primary Calls from ads action verified with 60-second minimum and Count One",
+    "budgetStatus": "Custom average daily budget ₹300.00 verified in Google Ads; all changes saved; not published",
+    "published": false,
+    "remainingAdGroups": "The remaining 10 groups are prepared in review CSV files; not entered in the platform draft"
+  },
+  "nativeCallConversion": {
+    "actionId": "7848756455",
+    "name": "Calls from ads",
+    "source": "Calls from ads",
+    "primary": true,
+    "minimumCallDurationSeconds": 60,
+    "count": "One",
+    "clickThroughWindowDays": 30,
+    "attribution": "Data-driven",
+    "trackingStatus": "Awaiting conversions; no live calls tested"
+  }
 }
