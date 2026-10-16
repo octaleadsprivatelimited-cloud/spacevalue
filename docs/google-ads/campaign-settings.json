@@ -1,10 +1,10 @@
 {
-  "state": "Review package prepared; unpublished Google Ads draft started; final saving blocked by Google identity check",
+  "state": "Unpublished Google Ads draft saved at ₹300/day; full 11-group review package prepared",
   "accountEmail": "spcvalue@gmail.com",
   "accountId": "244-029-3549",
   "campaign": "Space Value | Hyderabad Projects | Search",
   "type": "Search",
-  "status": "Paused; user requested review before launch",
+  "status": "Unpublished draft; user requested review before launch",
   "averageDailyBudgetINR": 300,
   "monthlyBudgetLimitINR": 9120,
   "potentialDailySpendINR": 600,
@@ -20,7 +20,7 @@
   "startingMaxCpcINR": 30,
   "autoTagging": true,
   "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=space_value_projects&utm_term={keyword}&utm_content={creative}",
-  "conversionStatus": "GA4 phone contact_click exists with consent. Google Ads ID/labels and native call conversion setup are not yet verified; no completed-call tracking claim.",
+  "conversionStatus": "Native Calls from ads verified as a primary account-default goal, Count One, 60-second minimum; conversion action 7848756455. GA4 phone contact_click exists with consent. Website answered-call tracking and Google Ads website ID/labels remain unconfigured.",
   "primaryEnquiry": "Phone calls to +91 86862 56748; no form goal",
   "adGroups": [
     "yula-neo",
@@ -48,8 +48,8 @@
     "country": "IN",
     "phone": "8686256748",
     "reporting": true,
-    "schedule": "Monday–Saturday 09:30–19:30 IST",
-    "status": "Review only; create in Google Ads after account access and any call terms approval"
+    "schedule": "Asset all days; campaign limits eligibility to Monday–Saturday 09:30–19:30 IST",
+    "status": "Business phone applied in the unpublished campaign wizard, with call reporting on; association must be rechecked before publication"
   },
   "conversionPlan": {
     "primary": "Calls from ads lasting at least 60 seconds",
@@ -62,25 +62,37 @@
   "mccLink": {
     "manager": "Octaleads",
     "managerId": "506-089-4911",
-    "status": "Not verified; do not treat repository account details as proof of a live manager link"
+    "status": "Not linked as of 16 October 2026: link form prepared in Octaleads MCC; Google requires a separate manager passkey confirmation before the request can be sent"
   },
   "accountVerified": "Google Ads UI verified Space Value 244-029-3549, spcvalue@gmail.com on 16 October 2026",
-  "accountBlocker": "Account paused — complete advertiser verification",
+  "accountBlocker": "Account paused — advertiser verification requires exact legal organisation name and registered address; D-U-N-S is optional. Account-level EU political-ad declaration completed as No.",
   "platformDraft": {
     "campaignId": "281499343602002",
     "draftId": "10218745880",
     "name": "Space Value | Hyderabad Projects | Calls | Review",
     "goal": "Phone calls from ads",
-    "currentStage": "Custom budget step; identity check pending",
+    "currentStage": "Saved and exited without publishing; visible Resume draft card in account Overview",
     "enteredAdGroups": [
       "Godrej Neopolis (shown as Ad group 1 in wizard)"
     ],
     "enteredKeywords": 8,
-    "adHeadlines": 7,
-    "adDescriptions": 2,
+    "adHeadlines": 10,
+    "adDescriptions": 3,
     "callAssetPhone": "8686256748",
-    "callAssetStatus": "Added in wizard; persistence and qualified call settings still need verification after identity check",
-    "budgetStatus": "₹300 proposal; platform custom budget not yet saved",
-    "published": false
+    "callAssetStatus": "Applied in wizard; native primary Calls from ads action verified with 60-second minimum and Count One",
+    "budgetStatus": "Custom average daily budget ₹300.00 verified in Google Ads; all changes saved; not published",
+    "published": false,
+    "remainingAdGroups": "The remaining 10 groups are prepared in review CSV files; not entered in the platform draft"
+  },
+  "nativeCallConversion": {
+    "actionId": "7848756455",
+    "name": "Calls from ads",
+    "source": "Calls from ads",
+    "primary": true,
+    "minimumCallDurationSeconds": 60,
+    "count": "One",
+    "clickThroughWindowDays": 30,
+    "attribution": "Data-driven",
+    "trackingStatus": "Awaiting conversions; no live calls tested"
   }
 }
