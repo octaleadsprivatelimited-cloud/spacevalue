@@ -21,18 +21,20 @@ export function PropertyImage({
           fetchPriority={priority ? "high" : "auto"}
           className={`aspect-[16/10] w-full ${photo.contain ? "object-contain" : "object-cover"} transition-transform duration-700 group-hover:scale-105 motion-reduce:transition-none`}
         />
-        <div
-          className={`absolute top-3 left-3 flex h-16 w-28 items-center justify-center rounded-lg p-2 shadow-md ${photo.logoDark ? "bg-ink/95" : "bg-white/95"}`}
-        >
-          <img
-            src={photo.logo}
-            alt={photo.logoAlt}
-            width={112}
-            height={64}
-            loading="lazy"
-            className="h-full w-full object-contain"
-          />
-        </div>
+        {photo.showLogo !== false && (
+          <div
+            className={`absolute top-3 left-3 flex h-16 w-28 items-center justify-center rounded-lg p-2 shadow-md ${photo.logoDark ? "bg-ink/95" : "bg-white/95"}`}
+          >
+            <img
+              src={photo.logo}
+              alt={photo.logoAlt}
+              width={112}
+              height={64}
+              loading="lazy"
+              className="h-full w-full object-contain"
+            />
+          </div>
+        )}
         <span className="absolute bottom-3 right-3 rounded-full bg-ink/85 px-3 py-1 text-[0.65rem] text-white">
           {photo.label}
         </span>

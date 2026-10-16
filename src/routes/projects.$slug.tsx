@@ -24,6 +24,11 @@ function ProjectLanding() {
         <div className="grid items-center gap-9 lg:grid-cols-2 lg:gap-14">
           <div>
             <p className="eyebrow">Property enquiries · Space Value</p>
+            {property.offer && (
+              <p className="mt-5 inline-flex rounded-full bg-gold/20 px-4 py-2 text-sm font-medium text-ink">
+                {property.offer.headline}
+              </p>
+            )}
             <h1 className="mt-4 font-display text-5xl leading-tight text-ink sm:text-6xl">
               {property.name}
             </h1>
@@ -32,8 +37,9 @@ function ProjectLanding() {
               {property.location}
             </p>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Find out whether {property.name} fits your next home. Speak with Space Value for the
-              latest brochure, available options, current pricing and a site visit.
+              {property.offer
+                ? property.offer.description
+                : `Find out whether ${property.name} fits your next home. Speak with Space Value for the latest brochure, available options, current pricing and a site visit.`}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a

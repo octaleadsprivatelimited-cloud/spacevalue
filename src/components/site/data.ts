@@ -39,6 +39,10 @@ export type Property = {
   location: string;
   group: (typeof PROPERTY_GROUPS)[number];
   image: ProjectMediaKey;
+  offer?: {
+    headline: string;
+    description: string;
+  };
 };
 
 export const PROPERTIES: Property[] = [
@@ -86,10 +90,15 @@ export const PROPERTIES: Property[] = [
   },
   {
     slug: "godrej-property",
-    name: "Godrej Property",
+    name: "Godrej Neopolis",
     location: "Neopolis, Hyderabad",
     group: "Neopolis",
     image: "godrej-property",
+    offer: {
+      headline: "Pre-launch offer now on",
+      description:
+        "Call Space Value about the ongoing Godrej Neopolis pre-launch offer. Ask for the applicable units, full pricing, eligibility and current offer validity before proceeding.",
+    },
   },
   {
     slug: "rajapushpa",

@@ -10,10 +10,12 @@ export type ProjectMedia = {
   logoDark: boolean;
   contain: boolean;
   darkBackdrop: boolean;
+  showLogo?: boolean;
 };
 
 export const PROJECT_MEDIA = {
   "alekhya-homes": {
+    showLogo: false,
     src: "/images/space-value-logo.png",
     alt: "Space Value property enquiries",
     width: 453,
@@ -103,17 +105,19 @@ export const PROJECT_MEDIA = {
     caption: "Shown: Sattva’s upcoming Neopolis apartment project",
   },
   "godrej-property": {
-    src: "/images/projects/godrej-property.webp",
-    alt: "Godrej Madison Avenue, Kokapet — portfolio render",
-    width: 1280,
-    height: 900,
+    showLogo: false,
+    src: "/images/developers/godrej.webp",
+    alt: "Godrej Properties logo",
+    width: 480,
+    height: 98,
     logo: "/images/developers/godrej.webp",
     logoAlt: "Godrej Properties logo",
-    label: "Portfolio render",
+    label: "Godrej Neopolis enquiries",
     logoDark: false,
-    contain: false,
-    darkBackdrop: true,
-    caption: "Developer portfolio: Madison Avenue, Kokapet. Ask us about Neopolis options.",
+    contain: true,
+    darkBackdrop: false,
+    caption:
+      "Contact Space Value for Godrej Neopolis pre-launch offer details and the official project brochure.",
   },
   rajapushpa: {
     src: "/images/projects/rajapushpa.webp",
