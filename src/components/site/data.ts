@@ -31,6 +31,7 @@ export const PROPERTY_GROUPS = [
   "Tellapur",
   "Prestige projects",
   "Osman Nagar villas",
+  "Kokapet",
 ] as const;
 export type Property = {
   slug: string;
@@ -57,7 +58,7 @@ export const PROPERTIES: Property[] = [
   },
   {
     slug: "msn-reality",
-    name: "MSN Reality",
+    name: "MSN Realty",
     location: "Neopolis, Hyderabad",
     group: "Neopolis",
     image: "msn-reality",
@@ -173,6 +174,13 @@ export const PROPERTIES: Property[] = [
     location: "Osman Nagar, Hyderabad",
     group: "Osman Nagar villas",
     image: "muppa-villas",
+  },
+  {
+    slug: "alekhya-homes",
+    name: "Alekhya Homes",
+    location: "Kokapet, Hyderabad",
+    group: "Kokapet",
+    image: "alekhya-homes",
   },
 ];
 

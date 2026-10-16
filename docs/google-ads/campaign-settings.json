@@ -1,10 +1,10 @@
 {
-  "state": "Prepared locally; not configured or launched in Google Ads",
+  "state": "Prepared locally for review; Google Ads platform setup is not yet verified",
   "accountEmail": "spcvalue@gmail.com",
   "accountId": "244-029-3549",
   "campaign": "Space Value | Hyderabad Projects | Search",
   "type": "Search",
-  "status": "Paused until onboarding and tracking are completed",
+  "status": "Paused; user requested review before launch",
   "averageDailyBudgetINR": 300,
   "monthlyBudgetLimitINR": 9120,
   "potentialDailySpendINR": 600,
@@ -16,12 +16,12 @@
   ],
   "searchPartners": false,
   "displayNetwork": false,
-  "bidding": "Maximize clicks",
+  "bidding": "Maximize clicks with CPC cap for initial data collection; evaluate call conversion bidding after qualified call data is verified",
   "startingMaxCpcINR": 30,
   "autoTagging": true,
   "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=space_value_projects&utm_term={keyword}&utm_content={creative}",
-  "conversionStatus": "Not installed; requires actual Google Ads conversion ID and label after onboarding",
-  "primaryEnquiry": "WhatsApp; a click is enquiry intent, not a confirmed lead",
+  "conversionStatus": "GA4 phone contact_click exists with consent. Google Ads ID/labels and native call conversion setup are not yet verified; no completed-call tracking claim.",
+  "primaryEnquiry": "Phone calls to +91 86862 56748; no form goal",
   "adGroups": [
     "yula-neo",
     "ghr-cascade",
@@ -34,5 +34,33 @@
     "gamya",
     "tridasa"
   ],
-  "remainingProjects": "Landing pages prepared; developer-only entries and Sattva Lago require exact project confirmation before project-specific ads."
+  "remainingProjects": "Developer-only entries and Sattva Lago held for exact project confirmation. Alekhya Homes / Kokapet enquiry page added. Godrej offer copy held pending exact project, offer terms, project RERA and developer confirmation.",
+  "preparedOn": "2026-10-16",
+  "adSchedule": {
+    "timezone": "Asia/Kolkata",
+    "days": "Monday–Saturday",
+    "start": "09:30",
+    "end": "19:30",
+    "basis": "Published website contact hours; confirm staff availability before launch"
+  },
+  "callAsset": {
+    "country": "IN",
+    "phone": "8686256748",
+    "reporting": true,
+    "schedule": "Monday–Saturday 09:30–19:30 IST",
+    "status": "Review only; create in Google Ads after account access and any call terms approval"
+  },
+  "conversionPlan": {
+    "primary": "Calls from ads lasting at least 60 seconds",
+    "count": "One",
+    "websitePhoneClicks": "Secondary only; never report as answered calls",
+    "websiteCalls": "Configure actual website call conversion and verify number replacement before launch",
+    "forms": "Not a primary conversion",
+    "whatsapp": "Secondary diagnostic only"
+  },
+  "mccLink": {
+    "manager": "Octaleads",
+    "managerId": "506-089-4911",
+    "status": "Not verified; do not treat repository account details as proof of a live manager link"
+  }
 }

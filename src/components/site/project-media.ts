@@ -13,6 +13,20 @@ export type ProjectMedia = {
 };
 
 export const PROJECT_MEDIA = {
+  "alekhya-homes": {
+    src: "/images/space-value-logo.png",
+    alt: "Space Value property enquiries",
+    width: 453,
+    height: 564,
+    logo: "/images/space-value-logo.png",
+    logoAlt: "Space Value logo",
+    label: "Property enquiry",
+    caption:
+      "Contact Space Value for Alekhya Homes enquiries in Kokapet. Please confirm the exact project and phase with our team.",
+    logoDark: false,
+    contain: true,
+    darkBackdrop: false,
+  },
   "yula-neo": {
     src: "/images/projects/yula-neo.webp",
     alt: "Yula NEO — developer render",

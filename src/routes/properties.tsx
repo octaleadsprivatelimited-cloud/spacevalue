@@ -1,7 +1,7 @@
 import { pageMetadata } from "@/lib/site";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import { PROPERTIES, PROPERTY_GROUPS, propertyWhatsAppUrl } from "@/components/site/data";
+import { CONTACT, PROPERTIES, PROPERTY_GROUPS } from "@/components/site/data";
 import { PropertyImage } from "@/components/site/PropertyImage";
 import township from "@/assets/township.jpg";
 
@@ -58,10 +58,9 @@ function Properties() {
                   >
                     <a
                       id={p.slug}
-                      href={propertyWhatsAppUrl(p)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Enquire about ${p.name} in ${p.location} on WhatsApp`}
+                      href={`tel:+${CONTACT.phoneRaw}`}
+                      data-placement="property_card"
+                      aria-label={`Call Space Value about ${p.name} in ${p.location}`}
                       className="flex flex-1 scroll-mt-28 flex-col focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
                     >
                       <PropertyImage image={p.image} />
@@ -72,7 +71,7 @@ function Properties() {
                           Request project details, availability and a site visit with Space Value.
                         </p>
                         <span className="mt-6 inline-flex self-start border-b border-gold pb-1 text-sm text-ink">
-                          Enquire on WhatsApp ↗
+                          Call Now · {CONTACT.phoneDisplay}
                         </span>
                       </div>
                     </a>

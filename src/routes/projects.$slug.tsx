@@ -1,8 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { MapPin, MessageCircle, Phone, ArrowUpRight } from "lucide-react";
+import { MapPin, MessageCircle, Phone } from "lucide-react";
 import { CONTACT, PROPERTIES, RERA, propertyWhatsAppUrl } from "@/components/site/data";
 import { PropertyImage } from "@/components/site/PropertyImage";
-import { EnquiryForm } from "@/components/site/EnquiryForm";
+import { CallPanel } from "@/components/site/CallPanel";
 import { projectMetadata } from "@/lib/site";
 
 export const Route = createFileRoute("/projects/$slug")({
@@ -18,7 +18,6 @@ export const Route = createFileRoute("/projects/$slug")({
 function ProjectLanding() {
   const property = Route.useLoaderData();
   const enquiry = propertyWhatsAppUrl(property);
-  const visit = `https://wa.me/${CONTACT.phoneRaw}?text=${encodeURIComponent(`Hi Space Value, I would like to arrange a site visit for ${property.name} (${property.location}). Please share the available dates and confirm the project and phase.`)}`;
   return (
     <div data-project={property.slug}>
       <section className="mx-auto max-w-7xl px-5 pt-32 pb-14 sm:px-8 sm:pt-40 sm:pb-20">
@@ -38,25 +37,32 @@ function ProjectLanding() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
+                href={`tel:+${CONTACT.phoneRaw}`}
+                data-placement="project_hero"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-4 text-sm font-medium text-white hover:bg-ink/85"
+              >
+                <Phone size={19} aria-hidden="true" />
+                Call Now
+              </a>
+              <a
                 href={enquiry}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-4 text-sm font-medium text-white hover:bg-ink/85"
-              >
-                <MessageCircle size={19} aria-hidden="true" />
-                Get brochure & pricing
-              </a>
-              <a
-                href={`tel:+${CONTACT.phoneRaw}`}
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-border px-6 py-4 text-sm text-ink"
               >
-                <Phone size={18} aria-hidden="true" />
-                Call our team
-              </a>
-              <a href="#enquire" className="self-center px-2 text-sm underline">
-                Share your requirements
+                <MessageCircle size={18} aria-hidden="true" />
+                WhatsApp enquiry
               </a>
             </div>
+            <p className="mt-4 text-sm text-ink">
+              <a
+                href={`tel:+${CONTACT.phoneRaw}`}
+                className="font-medium underline underline-offset-4"
+              >
+                {CONTACT.phoneDisplay}
+              </a>
+              <span className="mt-1 block text-xs text-muted-foreground">{CONTACT.hours}</span>
+            </p>
             <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
               Space Value is a property channel partner. TG RERA agent: {RERA.number}. Enquiries are
               handled by Space Value, independently of the developer.
@@ -68,7 +74,7 @@ function ProjectLanding() {
         </div>
       </section>
       <section className="mx-auto max-w-3xl px-5 pb-14 sm:px-8">
-        <EnquiryForm property={property} />
+        <CallPanel property={property} />
       </section>
       <section className="border-y border-border bg-secondary/50 px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-7xl">
@@ -108,13 +114,12 @@ function ProjectLanding() {
             confirm the project, visit arrangements and available options with you.
           </p>
           <a
-            href={visit}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`tel:+${CONTACT.phoneRaw}`}
+            data-placement="site_visit_call"
             className="mt-7 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-4 text-sm font-medium text-ink"
           >
-            Request a site visit
-            <ArrowUpRight size={18} aria-hidden="true" />
+            <Phone size={18} aria-hidden="true" />
+            Call to arrange a site visit
           </a>
         </div>
         <div className="rounded-3xl border border-border bg-white p-7 sm:p-9">
@@ -141,11 +146,11 @@ function ProjectLanding() {
           {[
             [
               "How do I get the latest price?",
-              `Use “Get brochure & pricing” to open WhatsApp with a ${property.name} enquiry already filled in. Our team will confirm availability and pricing for the specific unit and phase.`,
+              `Call Space Value on ${CONTACT.phoneDisplay} and mention ${property.name}. Our team will confirm availability, the complete price breakdown and any applicable offers for the specific unit and phase.`,
             ],
             [
               "Can I book a site visit?",
-              "Yes. Request a site visit and share your preferred date. Our team will confirm the arrangements before you travel.",
+              "Yes. Call our team and share your preferred date. We will confirm the project, phase and visit arrangements before you travel.",
             ],
             [
               "Is this the developer’s website?",

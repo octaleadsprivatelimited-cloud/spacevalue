@@ -1,0 +1,23 @@
+{
+  "status": "HOLD — copy for review only; not published or imported",
+  "userInstruction": "Godrej has a pre-launch offer; make it clear the offer is going on",
+  "proposedHeadline": "Godrej Pre-Launch Offer",
+  "proposedLandingHeading": "Godrej pre-launch offer now on",
+  "proposedDescription": "Call Space Value about the Godrej pre-launch offer, project details and site visits.",
+  "phone": "+91 86862 56748",
+  "requiredBeforePublication": [
+    "Exact Godrej project and phase",
+    "Current offer wording, eligibility and validity",
+    "Official project RERA and developer approval for advertising",
+    "Correct project image; existing page shows Madison Avenue as a labelled portfolio render"
+  ],
+  "notAssumed": [
+    "Discount",
+    "Starting price",
+    "Limited stock",
+    "End date",
+    "Project name",
+    "Project registration"
+  ],
+  "policy": "https://support.google.com/adspolicy/answer/15937063?hl=en"
+}

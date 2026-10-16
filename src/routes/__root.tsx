@@ -13,7 +13,7 @@ import appCss from "../styles.css?url";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { Tracking } from "../components/site/Tracking";
-import { WhatsAppButton } from "../components/site/WhatsAppButton";
+import { CallButton } from "../components/site/CallButton";
 
 function NotFoundComponent() {
   return (
@@ -37,7 +37,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
   console.error(error);
   const router = useRouter();
 
@@ -135,7 +135,7 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
-      <WhatsAppButton />
+      <CallButton />
       <Tracking />
     </QueryClientProvider>
   );

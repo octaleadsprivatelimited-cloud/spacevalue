@@ -10,16 +10,15 @@ function Privacy() {
     <section className="mx-auto max-w-3xl px-5 pt-36 pb-20 sm:px-8">
       <p className="eyebrow">Space Value</p>
       <h1 className="mt-4 font-display text-5xl">Privacy notice</h1>
-      <p className="mt-4 text-sm text-muted-foreground">Updated 6 October 2026</p>
+      <p className="mt-4 text-sm text-muted-foreground">Updated 16 October 2026</p>
       <div className="mt-8 space-y-8 text-sm leading-relaxed text-muted-foreground">
         <div>
           <h2 className="font-display text-2xl text-ink">Your property enquiry</h2>
           <p className="mt-3">
-            The enquiry form prepares a WhatsApp draft containing your selected property and buying
-            preferences. You choose whether to open WhatsApp and send it. The website does not
-            submit the form to a lead database. When you send a message, call or email, Space Value
-            receives the information you share and uses it to respond to your enquiry and arrange
-            follow-up.
+            Call Now opens your device’s calling application. You choose whether to place the call.
+            Optional WhatsApp links prepare a property enquiry; you choose whether to send it. When
+            you send a message, call or email, Space Value receives the information you share and
+            uses it to respond to your enquiry and arrange follow-up.
           </p>
         </div>
         <div>
@@ -27,9 +26,8 @@ function Privacy() {
           <p className="mt-3">
             When configured and with your permission, Google Analytics measures visits and contact
             actions, and Microsoft Clarity provides heatmaps and session insights. These services
-            can process device, network and browsing information. The requirements form is masked
-            for session recordings. Budget preferences, names, phone numbers, emails and message
-            contents are not included in our custom analytics events.
+            can process device, network and browsing information. Budget preferences, names, phone
+            numbers, emails and message contents are not included in our custom analytics events.
           </p>
           <p className="mt-3">
             A random enquiry reference helps our team recognise the request. A contact click or
@@ -86,7 +84,7 @@ function Privacy() {
               {CONTACT.email}
             </a>{" "}
             or call {CONTACT.phoneDisplay}. Avoid sending identity documents, bank details or other
-            sensitive documents through the enquiry form.
+            sensitive documents through enquiry channels.
           </p>
         </div>
       </div>
