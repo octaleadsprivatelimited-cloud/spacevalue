@@ -1,5 +1,5 @@
 {
-  "state": "Unpublished Google Ads draft saved at ₹300/day; full 11-group review package prepared",
+  "state": "Unpublished Google Ads draft saved at ₹300/day; full 11-group review package prepared; Octaleads MCC linked",
   "accountEmail": "spcvalue@gmail.com",
   "accountId": "244-029-3549",
   "campaign": "Space Value | Hyderabad Projects | Search",
@@ -62,7 +62,9 @@
   "mccLink": {
     "manager": "Octaleads",
     "managerId": "506-089-4911",
-    "status": "Not linked as of 16 October 2026: link form prepared in Octaleads MCC; Google requires a separate manager passkey confirmation before the request can be sent"
+    "status": "Linked: verified in Space Value → Access and security → Managers on 16 October 2026. Octaleads 506-089-4911 appears with Date linked 16 Oct 2026, Manager type Google Ads, Owner No; no pending link request remains.",
+    "linkedOn": "2026-10-16",
+    "owner": false
   },
   "accountVerified": "Google Ads UI verified Space Value 244-029-3549, spcvalue@gmail.com on 16 October 2026",
   "accountBlocker": "Account paused — advertiser verification requires exact legal organisation name and registered address; D-U-N-S is optional. Account-level EU political-ad declaration completed as No.",
